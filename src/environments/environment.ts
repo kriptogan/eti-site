@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:10102',
-  appName: 'CRM System',
+  appName: 'Eti - CBT',
   version: '1.0.0'
 };
 
