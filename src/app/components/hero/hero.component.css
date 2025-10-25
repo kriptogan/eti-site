@@ -1,35 +1,16 @@
 /* Hero Section */
 .hero-section {
-  background: #fbe9e0;
+  background: url('/assets/hero-background.jpg') center center / cover no-repeat;
   position: relative;
   overflow: visible;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  margin-top: 95px;
   padding-top: 80px;
   padding-bottom: 100px;
 }
 
-/* Curved Bottom Wave */
-.wave-divider {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.wave-divider svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.wave-divider path {
-  fill: #f7beb4;
-}
 
 .hero-container {
   max-width: 1200px;
@@ -39,6 +20,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero Content */
@@ -249,10 +232,6 @@
   .hero-section {
     min-height: auto;
     padding: 6rem 0 3rem;
-  }
-  
-  .wave-divider {
-    height: 80px;
   }
   
   .hero-container {
