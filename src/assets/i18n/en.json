@@ -18,7 +18,14 @@
     "subtitle": "Together we'll embark on a journey to find peace",
     "ctaPrimary": "Get Started",
     "ctaSecondary": "Learn More",
-    "imageAlt": "Therapy Image"
+    "imageAlt": "Therapy Image",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Your email address",
+      "message": "Message",
+      "submit": "Contact Us"
+    }
   },
   "about": {
     "title": "About",

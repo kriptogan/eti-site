@@ -1,43 +1,51 @@
 <section id="home" class="hero-section">
   <div class="hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        {{ 'hero.title' | translate }}
-      </h1>
-      
-      <div class="hero-animated-text">
-        <span class="static-text">{{ 'hero.staticText' | translate }}</span>
-        <span class="rotating-text-wrapper">
-          <span class="rotating-text">
-            <span 
-              *ngFor="let word of rotatingWords; let i = index" 
-              class="word"
-              [class.active]="i === currentWordIndex">
-              {{ word }}
-            </span>
-          </span>
-        </span>
-      </div>
-      
-      <p class="hero-subtitle">
-        {{ 'hero.subtitle' | translate }}
-      </p>
-      
-      <div class="hero-buttons">
-        <button class="btn btn-primary btn-lg">
-          {{ 'hero.ctaPrimary' | translate }}
+    <div class="contact-form-wrapper">
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input 
+            type="text" 
+            class="form-control" 
+            [(ngModel)]="formData.name"
+            name="name"
+            placeholder="{{ 'hero.form.name' | translate }}"
+            required>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="tel" 
+            class="form-control" 
+            [(ngModel)]="formData.phone"
+            name="phone"
+            placeholder="{{ 'hero.form.phone' | translate }}"
+            required>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="email" 
+            class="form-control" 
+            [(ngModel)]="formData.email"
+            name="email"
+            placeholder="{{ 'hero.form.email' | translate }}"
+            required>
+        </div>
+        
+        <div class="form-group">
+          <textarea 
+            class="form-control" 
+            [(ngModel)]="formData.message"
+            name="message"
+            rows="5"
+            placeholder="{{ 'hero.form.message' | translate }}"
+            required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">
+          {{ 'hero.form.submit' | translate }}
         </button>
-        <button class="btn btn-outline-primary btn-lg">
-          {{ 'hero.ctaSecondary' | translate }}
-        </button>
-      </div>
-    </div>
-    
-    <div class="hero-image">
-      <div class="image-placeholder">
-        <i class="fas fa-lotus fa-8x"></i>
-        <p>{{ 'hero.imageAlt' | translate }}</p>
-      </div>
+      </form>
     </div>
   </div>
 </section>

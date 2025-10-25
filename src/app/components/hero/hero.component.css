@@ -14,180 +14,88 @@
 
 .hero-container {
   max-width: 1200px;
-  margin: 0 auto;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
   z-index: 1;
+  min-height: calc(100vh - 95px);
+  right: 30px;
+  width: 450px;
+  top: -50px;
 }
 
-/* Hero Content */
-.hero-content {
-  position: relative;
-  z-index: 2;
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+  width: 100%;
+  max-width: 550px;
   animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--text-dark);
+.contact-form {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
   margin-bottom: 1.5rem;
-  line-height: 1.2;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.hero-animated-text {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.static-text {
-  color: var(--text-dark);
-}
-
-.rotating-text-wrapper {
-  position: relative;
-  display: inline-block;
-  min-width: 200px;
-}
-
-.rotating-text {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-}
-
-.word {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-.word.active {
-  opacity: 1;
-  transform: translateY(0);
-  animation: typing 0.6s ease-in-out;
-}
-
-@keyframes typing {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  color: var(--text-light);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  animation: fadeInUp 0.8s ease-out 0.8s both;
-}
-
-.btn {
-  padding: 0.875rem 2rem;
+.form-control {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
-  border-radius: 50px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(70, 177, 177, 0.1);
+}
+
+.form-control::placeholder {
+  color: #999;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background: #b94242;
+  color: white;
   border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
+  box-shadow: 0 4px 15px rgba(185, 66, 66, 0.3);
 }
 
-.btn-primary {
-  background: var(--accent-color);
-  color: white;
-  box-shadow: var(--shadow-light);
-}
-
-.btn-primary:hover {
+.btn-submit:hover {
+  background: #a03939;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-  opacity: 0.9;
+  box-shadow: 0 6px 20px rgba(185, 66, 66, 0.4);
 }
 
-.btn-outline-primary {
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  background: transparent;
-}
-
-.btn-outline-primary:hover {
-  background: var(--accent-color);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-lg {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-}
-
-/* Hero Image */
-.hero-image {
-  position: relative;
-  z-index: 1;
-  animation: fadeInRight 0.8s ease-out 0.4s both;
-}
-
-.image-placeholder {
-  background: white;
-  border-radius: 20px;
-  padding: 3rem;
-  text-align: center;
-  box-shadow: var(--shadow-medium);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  transition: all 0.3s ease;
-}
-
-.image-placeholder:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
-}
-
-.image-placeholder i {
-  color: var(--primary-light);
-  margin-bottom: 1rem;
-}
-
-.image-placeholder p {
-  font-size: 1.2rem;
-  color: var(--text-light);
-  font-weight: 500;
-  margin: 0;
+.btn-submit:active {
+  transform: translateY(0);
 }
 
 /* Animations */
@@ -202,88 +110,51 @@
   }
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 2.8rem;
-  }
-  
-  .hero-animated-text {
-    font-size: 1.6rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    padding: 6rem 0 3rem;
+    padding: 4rem 0 3rem;
   }
   
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     padding: 1rem;
+    min-height: auto;
   }
   
-  .hero-title {
-    font-size: 2rem;
+  .contact-form-wrapper {
+    max-width: 100%;
   }
   
-  .hero-animated-text {
-    font-size: 1.3rem;
-    min-height: 40px;
+  .contact-form {
+    padding: 2rem 1.5rem;
   }
   
-  .rotating-text {
-    height: 40px;
+  .form-control {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
   }
   
-  .hero-subtitle {
+  .btn-submit {
+    padding: 0.875rem;
     font-size: 1rem;
   }
-  
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1.5rem 1rem;
   }
   
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .image-placeholder {
-    min-height: 300px;
-    padding: 2rem;
-  }
-  
-  .image-placeholder i {
-    font-size: 5rem !important;
+  .form-group {
+    margin-bottom: 1.25rem;
   }
 }
 
 /* RTL Support */
-:host-context(.rtl) .hero-animated-text {
-  flex-direction: row-reverse;
-}
-
-:host-context(.rtl) .word {
-  left: auto;
-  right: 0;
+:host-context(.rtl) .form-control {
+  text-align: right;
+  direction: rtl;
 }
 
