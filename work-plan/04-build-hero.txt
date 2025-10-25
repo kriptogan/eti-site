@@ -1,0 +1,171 @@
+================================================================================
+TASK 04: BUILD HERO SECTION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create an engaging hero section with animated rotating text, main heading,
+subtitle, CTA buttons, and featured image.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Large heading with emphasis
+✓ Animated rotating text (typing effect)
+✓ Subtitle text
+✓ Two CTA buttons (primary + secondary)
+✓ Featured image/placeholder on right
+✓ Gradient background
+✓ Full viewport height
+✓ Responsive 2-column layout
+✓ Fade-in animations on load
+
+LAYOUT STRUCTURE:
+-----------------
+2-column layout (50/50 split on desktop, stacked on mobile)
+- Left: Content (heading, animated text, subtitle, buttons)
+- Right: Image
+
+HTML STRUCTURE:
+---------------
+<section id="home" class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        {{ 'hero.title' | translate }}
+      </h1>
+      
+      <div class="hero-animated-text">
+        <span class="static-text">{{ 'hero.staticText' | translate }}</span>
+        <span class="rotating-text">
+          <span class="word" *ngFor="let word of rotatingWords; let i = index"
+                [class.active]="i === currentWordIndex">
+            {{ word }}
+          </span>
+        </span>
+      </div>
+      
+      <p class="hero-subtitle">
+        {{ 'hero.subtitle' | translate }}
+      </p>
+      
+      <div class="hero-buttons">
+        <button class="btn btn-primary btn-lg">
+          {{ 'hero.ctaPrimary' | translate }}
+        </button>
+        <button class="btn btn-outline-primary btn-lg">
+          {{ 'hero.ctaSecondary' | translate }}
+        </button>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <div class="image-placeholder">
+        <i class="fas fa-lotus fa-8x"></i>
+        <p>{{ 'hero.imageAlt' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class HeroComponent implements OnInit, OnDestroy {
+  rotatingWords: string[] = [];
+  currentWordIndex: number = 0;
+  private intervalId: any;
+  
+  ngOnInit() {
+    // Load rotating words from translations
+    this.rotatingWords = [
+      this.translate.instant('hero.word1'),
+      this.translate.instant('hero.word2'),
+      this.translate.instant('hero.word3')
+    ];
+    
+    // Start rotation
+    this.startRotation();
+  }
+  
+  startRotation() {
+    this.intervalId = setInterval(() => {
+      this.currentWordIndex = 
+        (this.currentWordIndex + 1) % this.rotatingWords.length;
+    }, 2500);
+  }
+  
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+}
+
+CSS REQUIREMENTS:
+-----------------
+- Gradient background from theme
+- Full viewport height (min-vh-100)
+- Flexbox/Grid for layout
+- Animated text with typing/fade effect
+- Button styles with hover effects
+- Responsive breakpoints
+- Image placeholder styling
+- Fade-in animations on load
+
+ANIMATION EFFECTS:
+------------------
+1. Rotating Text Animation:
+   - Typing effect or fade in/out
+   - 2.5 second interval
+   - Smooth transitions
+
+2. Content Fade-in:
+   - Title fades in first
+   - Animated text appears
+   - Subtitle fades in
+   - Buttons appear last
+   - Staggered timing (0.2s intervals)
+
+TRANSLATION KEYS NEEDED:
+------------------------
+hero.title
+hero.staticText
+hero.word1
+hero.word2
+hero.word3
+hero.subtitle
+hero.ctaPrimary
+hero.ctaSecondary
+hero.imageAlt
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 2-column 50/50
+Tablet (768-1024px): 2-column adjusted
+Mobile (<768px): Stacked, image below content
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Layout renders correctly
+[ ] Rotating text animation works
+[ ] Both CTA buttons styled
+[ ] Gradient background applied
+[ ] Image placeholder displays
+[ ] Responsive on all screens
+[ ] Fade-in animations work
+[ ] RTL support for Hebrew
+[ ] Theme colors applied
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Task 13 (Theme integration) can run parallel
+- TranslateService configured
+
+ESTIMATED TIME: 2 hours
+
+NEXT TASK: 05-build-about.txt
+
+================================================================================
+

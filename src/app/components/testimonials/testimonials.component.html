@@ -1,0 +1,48 @@
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'testimonials.title' | translate }}
+    </h2>
+    
+    <div class="testimonials-carousel">
+      <button 
+        class="carousel-arrow carousel-arrow-prev" 
+        (click)="previousSlide()"
+        aria-label="Previous testimonial">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="testimonials-wrapper">
+        <div class="testimonial-card" 
+             *ngFor="let testimonial of testimonials; let i = index"
+             [class.active]="i === currentSlide">
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              {{ testimonial.text | translate }}
+            </p>
+            <div class="testimonial-author" *ngIf="testimonial.author">
+              <span>— {{ testimonial.author }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button 
+        class="carousel-arrow carousel-arrow-next" 
+        (click)="nextSlide()"
+        aria-label="Next testimonial">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      
+      <div class="carousel-pagination">
+        <button 
+          *ngFor="let testimonial of testimonials; let i = index"
+          class="pagination-dot"
+          [class.active]="i === currentSlide"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,204 @@
+{
+  "header": {
+    "brand": "Eti Therapy",
+    "home": "Home",
+    "about": "About",
+    "method": "Method",
+    "stages": "Stages",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "cta": "Free Consultation"
+  },
+  "hero": {
+    "title": "Want to be your best version?",
+    "staticText": "It's time to",
+    "word1": "Relax",
+    "word2": "Breathe",
+    "word3": "Smile",
+    "subtitle": "Together we'll embark on a journey to find peace",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More",
+    "imageAlt": "Therapy Image"
+  },
+  "about": {
+    "title": "About",
+    "paragraph1": "Eti Zak, age 44, mother of 3 children. Li-CBT therapist, instructor and lecturer for youth and adults. Graduate of MA from University of Haifa, engaged for years in therapy and assistance to at-risk populations alongside extensive work in the public sector.",
+    "paragraph2": "Throughout my life I have dealt with many challenges, experiences and anxieties that affected me and led me to undergo a deep internal process accompanied by meaningful research and learning on the subject. One of my insights was to share and teach people to overcome daily difficulties and move from a place of difficulty to a new path where you can smile and function better.",
+    "paragraph3": "I see the opportunity to help others as my mission and calling. As an athlete and triathlete, I believe in sports as a way of life for body and soul that helps overcome crises. A healthy lifestyle and use of sports to strengthen and empower the soul.",
+    "highlight1": "MA Graduate - Licensed Therapist",
+    "highlight2": "Specializes in Li-CBT Treatment",
+    "highlight3": "Experience with At-Risk Populations",
+    "imageAlt": "Eti Zak - Therapist Photo"
+  },
+  "method": {
+    "title": "The Method",
+    "intro": "Short-term, focused, effective and practical treatment that will help you return to better functioning, appreciate and love yourself. During the treatment I will help you notice the connection between beliefs and thoughts, to emotions and patterns of behavior they entail.",
+    "description": "We will learn to deal with cognitive distortions, negative thoughts, fears and avoidances.",
+    "adapted": "The treatment method is personally adapted according to:",
+    "result": "At the end of the process you will feel that your anxiety threshold has dropped significantly, your perspective will change and you will be able to find solutions in a place that used to be an obstacle for you.",
+    "aspect1": "The Patient",
+    "aspect2": "Age",
+    "aspect3": "Health",
+    "aspect4": "Lifestyle",
+    "aspect5": "Motivation for Change"
+  },
+  "cta": {
+    "title": "Want to Start Your Journey?",
+    "subtitle": "Leave your details and I'll get back to you soon",
+    "imageAlt": "Professional Therapist",
+    "form": {
+      "name": "Name",
+      "phone": "Phone *",
+      "message": "Message",
+      "phoneRequired": "Phone number is required",
+      "submit": "Send",
+      "success": "Thank you! I will contact you soon."
+    }
+  },
+  "stages": {
+    "title": "Treatment Stages",
+    "intro": "The treatment process is divided into clear stages that lead to real and lasting change:",
+    "stage1": "Initial consultation and understanding the difficulty",
+    "stage2": "Skill building and learning coping tools",
+    "stage3": "Implementation and consolidation of changes"
+  },
+  "targetAudience": {
+    "title": "Who Is This For?",
+    "imageAlt": "Target Audience Illustration",
+    "item1": {
+      "title": "People suffering from anxiety and stress",
+      "description": "If you experience constant worry, stress or panic attacks"
+    },
+    "item2": {
+      "title": "Coping with trauma or crisis",
+      "description": "Support and tools for processing difficult experiences"
+    },
+    "item3": {
+      "title": "Life transitions and changes",
+      "description": "Help adapting to new situations and significant changes"
+    },
+    "item4": {
+      "title": "Relationship difficulties",
+      "description": "Improving communication and building healthy relationships"
+    },
+    "item5": {
+      "title": "Personal growth and empowerment",
+      "description": "Development of self-awareness and realization of potential"
+    }
+  },
+  "advantages": {
+    "title": "Advantages of Li-CBT Treatment",
+    "intro": "Li-CBT therapy offers proven advantages that will help you achieve lasting change:",
+    "shortTerm": {
+      "title": "Short-term and Focused",
+      "description": "Therapy focused on specific goals with a clear timeframe. Most processes range from 12-20 sessions."
+    },
+    "focused": {
+      "title": "Goal-oriented",
+      "description": "We work on specific, measurable goals tailored to your needs and difficulties."
+    },
+    "rootCause": {
+      "title": "Addresses Root Causes",
+      "description": "Identifies and treats the source of the problem, not just symptoms."
+    },
+    "practical": {
+      "title": "Practical Tools",
+      "description": "You receive practical tools and techniques that you can use in daily life."
+    },
+    "longTerm": {
+      "title": "Long-term Results",
+      "description": "The skills you acquire remain with you even after therapy ends."
+    },
+    "active": {
+      "title": "Active Collaboration",
+      "description": "You are an active partner in the process with homework and practice between sessions."
+    },
+    "structured": {
+      "title": "Structured and Clear",
+      "description": "Clear structure with defined goals and measurable progress."
+    },
+    "measurable": {
+      "title": "Proven Effectiveness",
+      "description": "Research-based method with proven effectiveness for various difficulties."
+    }
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "testimonial1": "\"The therapy with Eti changed my life. I learned to identify and change thought patterns that held me back for years. Today I feel much more confident and calm.\"",
+    "testimonial2": "\"As a mother of three, I was overwhelmed by anxiety and stress. Eti gave me practical tools that I use every day. I highly recommend!\"",
+    "testimonial3": "\"The professional, warm and sensitive treatment. Eti accompanied me through a difficult period and helped me find inner strength I didn't know I had.\"",
+    "testimonial4": "\"After years of struggling with social anxiety, I can finally say I enjoy social situations. The therapy was exactly what I needed.\"",
+    "testimonial5": "\"Eti is not only a professional therapist but also a warm and understanding person. She created a safe space where I could open up and work on myself.\""
+  },
+  "footer": {
+    "about": {
+      "title": "About",
+      "description": "Licensed Li-CBT therapist specializing in treatment for anxiety, stress and life challenges. Personal, professional and effective treatment."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "about": "About",
+      "method": "Method",
+      "stages": "Stages",
+      "testimonials": "Testimonials"
+    },
+    "contact": {
+      "title": "Contact",
+      "location": "Tel Aviv, Israel"
+    },
+    "copyright": "Eti Therapy. All Rights Reserved."
+  },
+  "landing": {
+    "hero": {
+      "title": "Welcome to CBT Therapy",
+      "subtitle": "Licensed therapist specializing in cognitive behavioral therapy for mothers and women",
+      "cta": "Book Appointment",
+      "learnMore": "Learn More"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "I am a licensed CBT therapist with extensive experience working with women and mothers. I believe every woman can develop tools to cope with life's challenges and live fuller, more fulfilling lives.",
+      "approach": "My approach is based on scientifically proven CBT principles, combined with sensitivity and compassion appropriate for women and mothers."
+    },
+    "services": {
+      "title": "My Services",
+      "anxiety": {
+        "title": "Anxiety Treatment",
+        "description": "Tools for coping with general anxiety, social anxiety, and panic"
+      },
+      "depression": {
+        "title": "Depression Treatment",
+        "description": "Support and tools for dealing with depression and feelings of hopelessness"
+      },
+      "motherhood": {
+        "title": "Motherhood & Therapy",
+        "description": "Support for mothers dealing with stress, anxiety, and postpartum depression"
+      },
+      "relationships": {
+        "title": "Relationships & Couples",
+        "description": "Tools for improving communication and healthy relationships"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose Me?",
+      "experience": "Extensive Experience",
+      "specialization": "Specialization in Women & Mothers",
+      "evidence": "Evidence-Based Treatment",
+      "warmth": "Warm & Understanding Approach"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Clinic Address",
+      "hours": "Business Hours",
+      "message": "Send Message"
+    },
+    "footer": {
+      "rights": "All Rights Reserved",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  }
+}

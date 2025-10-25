@@ -1,0 +1,166 @@
+.advantages-section {
+  padding: 5rem 0;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title,
+.advantages-intro,
+.section-divider {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  margin: 0 auto 2rem;
+}
+
+.advantages-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.advantages-grid .flip-card:nth-child(7),
+.advantages-grid .flip-card:nth-child(8) {
+  grid-column: span 1;
+}
+
+.advantages-grid .flip-card:nth-child(7) {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.advantages-grid .flip-card:nth-child(8) {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.flip-card-front {
+  background: white;
+  color: var(--text-dark);
+  border: 2px solid var(--accent-color);
+}
+
+.flip-card-front h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--accent-color);
+}
+
+.flip-card-back {
+  background: var(--gradient-primary);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .advantages-grid .flip-card:nth-child(7),
+  .advantages-grid .flip-card:nth-child(8) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages-section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .flip-card {
+    height: 200px;
+  }
+  
+  .flip-card-front h3 {
+    font-size: 1.1rem;
+  }
+  
+  .flip-card-back p {
+    font-size: 0.9rem;
+  }
+}
+

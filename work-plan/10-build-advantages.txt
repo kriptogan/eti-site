@@ -1,0 +1,287 @@
+================================================================================
+TASK 10: BUILD ADVANTAGES SECTION (FLIP CARDS)
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create an impressive section showcasing 8 advantages of CBT therapy using
+flip cards that reveal details on hover.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with divider
+✓ Introduction text
+✓ 8 flip cards (3-3-2 layout)
+✓ Front side: Short title
+✓ Back side: Detailed description
+✓ Flip animation on hover
+✓ Dark background with pattern
+✓ Responsive layout
+
+LAYOUT STRUCTURE:
+-----------------
+- Centered title and intro
+- 3 rows of cards:
+  - Row 1: 3 cards
+  - Row 2: 3 cards
+  - Row 3: 2 cards (centered)
+
+HTML STRUCTURE:
+---------------
+<section id="advantages" class="advantages-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'advantages.title' | translate }}
+    </h2>
+    <div class="section-divider"></div>
+    
+    <p class="advantages-intro">
+      {{ 'advantages.intro' | translate }}
+    </p>
+    
+    <div class="advantages-grid">
+      <div class="flip-card" *ngFor="let advantage of advantages">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>{{ advantage.title | translate }}</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>{{ advantage.description | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class AdvantagesSectionComponent {
+  advantages = [
+    {
+      title: 'advantages.shortTerm.title',
+      description: 'advantages.shortTerm.description'
+    },
+    {
+      title: 'advantages.focused.title',
+      description: 'advantages.focused.description'
+    },
+    {
+      title: 'advantages.rootCause.title',
+      description: 'advantages.rootCause.description'
+    },
+    {
+      title: 'advantages.practical.title',
+      description: 'advantages.practical.description'
+    },
+    {
+      title: 'advantages.longTerm.title',
+      description: 'advantages.longTerm.description'
+    },
+    {
+      title: 'advantages.active.title',
+      description: 'advantages.active.description'
+    },
+    {
+      title: 'advantages.structured.title',
+      description: 'advantages.structured.description'
+    },
+    {
+      title: 'advantages.measurable.title',
+      description: 'advantages.measurable.description'
+    }
+  ];
+}
+
+CSS REQUIREMENTS (FLIP CARD ANIMATION):
+----------------------------------------
+.advantages-section {
+  padding: 5rem 0;
+  background: var(--gradient-primary);
+  color: white;
+  position: relative;
+}
+
+.section-title,
+.advantages-intro {
+  color: white;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Last row with 2 cards centered */
+.advantages-grid .flip-card:nth-child(7),
+.advantages-grid .flip-card:nth-child(8) {
+  grid-column: span 1;
+}
+
+.advantages-grid .flip-card:nth-child(7) {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.advantages-grid .flip-card:nth-child(8) {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+  height: 250px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.flip-card-front {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-dark);
+}
+
+.flip-card-front h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.flip-card-back {
+  background: var(--primary-dark);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+ADVANTAGES CONTENT (Based on Ofer):
+------------------------------------
+1. Short-Term Treatment (טיפול קצר מועד)
+   - 3-6 months, 12-20 sessions
+
+2. Focused and Goal-Oriented (טיפול ממוקד ומכוון מטרה)
+   - Built according to patient's specific problem
+
+3. Treats Root Cause (טיפול בשורש הבעיה)
+   - Not just symptoms, identifies negative thought patterns
+
+4. Practical Tools (כלים פרקטיים)
+   - Practical techniques and exposure exercises
+
+5. Long-Term Results (תוצאות ארוכות טווח)
+   - Tools for future situations, builds confidence
+
+6. Patient Activity (אקטיביות המטופל)
+   - "Homework" assignments for real-world application
+
+7. Structured Method (שיטת טיפול מובנית)
+   - Clear stages, defined goals, specific timeline
+
+8. Measurable and Quantifiable (ניתן למדידה ולכימות)
+   - Can measure and count results
+
+TRANSLATION KEYS NEEDED:
+------------------------
+advantages.title (Advantages of CBT / יתרונות CBT)
+advantages.intro
+advantages.shortTerm.title
+advantages.shortTerm.description
+advantages.focused.title
+advantages.focused.description
+advantages.rootCause.title
+advantages.rootCause.description
+advantages.practical.title
+advantages.practical.description
+advantages.longTerm.title
+advantages.longTerm.description
+advantages.active.title
+advantages.active.description
+advantages.structured.title
+advantages.structured.description
+advantages.measurable.title
+advantages.measurable.description
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 3 columns
+Tablet (768-1024px): 2 columns
+Mobile (<768px): 1 column
+
+FLIP CARD BEHAVIOR:
+-------------------
+- Desktop: Hover to flip
+- Mobile/Tablet: Tap to flip (need JS for toggle)
+- Smooth 3D rotation animation
+- Back face hidden properly
+
+ACCESSIBILITY:
+--------------
+- For mobile, add click handler to toggle flip
+- Keyboard navigation support
+- Focus states
+- ARIA labels for screen readers
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] Title and intro displayed
+[ ] 8 flip cards render
+[ ] 3-3-2 grid layout works
+[ ] Cards flip on hover/click
+[ ] Front side styled correctly
+[ ] Back side styled correctly
+[ ] Flip animation smooth
+[ ] Dark background applied
+[ ] Responsive layout works
+[ ] Mobile tap-to-flip works
+[ ] Theme colors applied
+[ ] RTL support
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- CSS 3D transforms support
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 3 hours
+
+NEXT TASK: 11-build-testimonials.txt
+
+================================================================================
+

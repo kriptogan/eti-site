@@ -1,0 +1,219 @@
+================================================================================
+TASK 08: BUILD TREATMENT STAGES SECTION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create a section displaying the 3 stages of CBT treatment with numbered steps
+and descriptions.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with divider
+✓ Introduction text
+✓ 3 treatment stages
+✓ Numbered display (1, 2, 3)
+✓ Stage descriptions
+✓ Alternating layout
+✓ Background colors
+✓ Responsive layout
+
+LAYOUT STRUCTURE:
+-----------------
+- Centered title and intro
+- 6-column grid: Number - Description - Number - Description - Number - Description
+- Alternating colors for description boxes
+
+HTML STRUCTURE:
+---------------
+<section id="stages" class="stages-section">
+  <div class="container">
+    <div class="stages-header">
+      <h2 class="section-title">
+        {{ 'stages.title' | translate }}
+      </h2>
+      <div class="section-divider"></div>
+      
+      <p class="stages-intro">
+        {{ 'stages.intro' | translate }}
+      </p>
+    </div>
+    
+    <div class="stages-grid">
+      <div class="stage-item" *ngFor="let stage of stages; let i = index">
+        <div class="stage-number">
+          <h3>{{ i + 1 }}</h3>
+        </div>
+        <div class="stage-description">
+          <p>{{ stage.description | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class StagesSectionComponent {
+  stages = [
+    {
+      number: 1,
+      description: 'stages.stage1'
+    },
+    {
+      number: 2,
+      description: 'stages.stage2'
+    },
+    {
+      number: 3,
+      description: 'stages.stage3'
+    }
+  ];
+}
+
+CSS REQUIREMENTS:
+-----------------
+.stages-section {
+  padding: 5rem 0;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.stages-header {
+  margin-bottom: 3rem;
+}
+
+.stages-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stage-item {
+  display: contents;
+}
+
+.stage-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-number h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.stage-description {
+  background: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.stage-description:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.stage-description p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stages-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .stage-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+STAGE CONTENT (Based on Ofer):
+-------------------------------
+Stage 1: Assessment and Treatment Plan Customization
+        "נבצע הערכה והתאמה של תכנית טיפולית"
+
+Stage 2: Learning and Training Effective Coping Strategies
+        "לימוד ואימון אסטרטגיות יעילות להתמודדות עם קושי"
+
+Stage 3: Implementation Phase
+        "שלב היישום"
+
+TRANSLATION KEYS NEEDED:
+------------------------
+stages.title (Treatment Stages / שלבי הטיפול)
+stages.intro (CBT treatment consists of three stages)
+stages.stage1
+stages.stage2
+stages.stage3
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 6-column grid (Number-Description pattern)
+Tablet (768-1024px): Adjusted spacing
+Mobile (<768px): Stacked vertically, each stage in its own row
+
+ANIMATIONS:
+-----------
+- Fade in on scroll
+- Hover effect on description boxes
+- Smooth transitions
+
+ALTERNATIVE LAYOUT:
+-------------------
+Could also implement as:
+- Timeline layout with connecting lines
+- Vertical stepper
+- Cards with overlapping numbers
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] Title and divider displayed
+[ ] Intro text shows
+[ ] 3 stages render
+[ ] Numbers display correctly
+[ ] Descriptions show
+[ ] Alternating layout works
+[ ] Hover effects work
+[ ] Responsive layout
+[ ] Theme colors applied
+[ ] RTL support
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 1.5 hours
+
+NEXT TASK: 09-build-target-audience.txt
+
+================================================================================
+

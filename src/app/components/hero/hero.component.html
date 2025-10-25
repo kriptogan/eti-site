@@ -1,0 +1,50 @@
+<section id="home" class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        {{ 'hero.title' | translate }}
+      </h1>
+      
+      <div class="hero-animated-text">
+        <span class="static-text">{{ 'hero.staticText' | translate }}</span>
+        <span class="rotating-text-wrapper">
+          <span class="rotating-text">
+            <span 
+              *ngFor="let word of rotatingWords; let i = index" 
+              class="word"
+              [class.active]="i === currentWordIndex">
+              {{ word }}
+            </span>
+          </span>
+        </span>
+      </div>
+      
+      <p class="hero-subtitle">
+        {{ 'hero.subtitle' | translate }}
+      </p>
+      
+      <div class="hero-buttons">
+        <button class="btn btn-primary btn-lg">
+          {{ 'hero.ctaPrimary' | translate }}
+        </button>
+        <button class="btn btn-outline-primary btn-lg">
+          {{ 'hero.ctaSecondary' | translate }}
+        </button>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <div class="image-placeholder">
+        <i class="fas fa-lotus fa-8x"></i>
+        <p>{{ 'hero.imageAlt' | translate }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C300,100 900,100 1200,0 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,149 @@
+================================================================================
+TASK 03: BUILD HEADER/NAVIGATION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Build the sticky header with logo, navigation menu, language switcher, 
+theme selector, and CTA button.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Logo on the left
+✓ Horizontal navigation menu (center)
+✓ Language switcher dropdown
+✓ Theme selector dropdown
+✓ CTA button (phone call)
+✓ Sticky behavior on scroll
+✓ Mobile hamburger menu
+✓ Responsive design
+✓ Active link highlighting
+✓ Smooth scroll to sections
+
+NAVIGATION ITEMS:
+-----------------
+- Home (scroll to top)
+- About (scroll to #about)
+- Services (scroll to #services)
+- Method (scroll to #method)
+- Testimonials (scroll to #testimonials)
+- Contact (scroll to #contact)
+
+HTML STRUCTURE:
+---------------
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <a href="#home">
+        <i class="fas fa-lotus"></i> <!-- Or image -->
+        <span>Eti Therapy</span>
+      </a>
+    </div>
+    
+    <ul class="navbar-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    
+    <div class="navbar-actions">
+      <!-- Language Switcher -->
+      <div class="dropdown">
+        <button>{{ currentLang }}</button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let lang of languages">
+            <button (click)="switchLanguage(lang)">
+              {{ lang.name }}
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Theme Selector -->
+      <div class="dropdown">
+        <button><i class="fas fa-palette"></i></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let theme of themes">
+            <button (click)="switchTheme(theme.name)">
+              <span class="theme-preview" [style.background]="theme.colors.primary"></span>
+              {{ theme.displayName }}
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- CTA Button -->
+      <a href="tel:+972-XX-XXX-XXXX" class="btn-cta">
+        <i class="fas fa-phone"></i>
+        <span>{{ 'header.cta' | translate }}</span>
+      </a>
+    </div>
+    
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggle" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+TYPESCRIPT LOGIC:
+-----------------
+- Import ThemeService
+- Import TranslateService
+- Implement sticky scroll behavior
+- Handle menu toggle for mobile
+- Active link highlighting
+- Smooth scroll functionality
+
+CSS REQUIREMENTS:
+-----------------
+- Sticky positioning
+- Backdrop blur effect
+- Box shadow on scroll
+- Transitions for smooth interactions
+- Mobile responsive styles
+- Dropdown animations
+- Z-index management
+
+TRANSLATION KEYS NEEDED:
+------------------------
+header.home
+header.about
+header.services
+header.method
+header.testimonials
+header.contact
+header.cta
+header.theme
+header.language
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Logo displays correctly
+[ ] Navigation menu works
+[ ] Language switcher functional
+[ ] Theme selector functional
+[ ] CTA button styled and linked
+[ ] Sticky behavior working
+[ ] Mobile menu working
+[ ] Responsive on all screens
+[ ] Smooth scroll implemented
+[ ] Active link highlighting
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) must be complete
+- ThemeService available
+- TranslateService configured
+
+ESTIMATED TIME: 2 hours
+
+NEXT TASK: 04-build-hero.txt
+
+================================================================================
+

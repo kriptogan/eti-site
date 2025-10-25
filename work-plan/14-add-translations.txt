@@ -1,0 +1,285 @@
+================================================================================
+TASK 14: ADD TRANSLATION KEYS
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Add all necessary translation keys to the 7 language JSON files for complete
+internationalization support.
+
+DELIVERABLES:
+-------------
+✓ All translation keys added to JSON files
+✓ 7 languages supported (EN, HEB, FR, ES, IT, RU, DAN)
+✓ RTL support for Hebrew
+✓ Language switcher functional
+✓ Consistent translations across all sections
+
+LANGUAGES TO SUPPORT:
+---------------------
+1. English (en.json) - Primary language
+2. Hebrew (heb.json) - RTL
+3. French (fr.json)
+4. Spanish (es.json)
+5. Italian (it.json)
+6. Russian (ru.json)
+7. Danish (dan.json)
+
+FILES TO UPDATE:
+----------------
+src/assets/i18n/en.json
+src/assets/i18n/heb.json
+src/assets/i18n/fr.json
+src/assets/i18n/es.json
+src/assets/i18n/it.json
+src/assets/i18n/ru.json
+src/assets/i18n/dan.json
+
+TRANSLATION KEY STRUCTURE:
+--------------------------
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    ...
+  },
+  "hero": {
+    "title": "...",
+    "subtitle": "...",
+    ...
+  },
+  ...
+}
+
+ALL TRANSLATION KEYS NEEDED:
+----------------------------
+
+HEADER SECTION:
+- header.home
+- header.about
+- header.services
+- header.method
+- header.testimonials
+- header.contact
+- header.cta
+- header.theme
+- header.language
+
+HERO SECTION:
+- hero.title
+- hero.staticText
+- hero.word1
+- hero.word2
+- hero.word3
+- hero.subtitle
+- hero.ctaPrimary
+- hero.ctaSecondary
+- hero.imageAlt
+
+ABOUT SECTION:
+- about.title
+- about.paragraph1
+- about.paragraph2
+- about.paragraph3
+- about.highlight1
+- about.highlight2
+- about.highlight3
+- about.imageAlt
+
+METHOD SECTION:
+- method.title
+- method.intro
+- method.description
+- method.adapted
+- method.result
+- method.aspect1 (The Patient)
+- method.aspect2 (Age)
+- method.aspect3 (Health)
+- method.aspect4 (Lifestyle)
+- method.aspect5 (Motivation)
+
+CTA FORM SECTION:
+- cta.title
+- cta.subtitle
+- cta.imageAlt
+- cta.form.name
+- cta.form.phone
+- cta.form.message
+- cta.form.submit
+- cta.form.phoneRequired
+- cta.form.success
+
+STAGES SECTION:
+- stages.title
+- stages.intro
+- stages.stage1
+- stages.stage2
+- stages.stage3
+
+TARGET AUDIENCE SECTION:
+- targetAudience.title
+- targetAudience.imageAlt
+- targetAudience.item1.title
+- targetAudience.item1.description
+- targetAudience.item2.title
+- targetAudience.item2.description
+- targetAudience.item3.title
+- targetAudience.item3.description
+- targetAudience.item4.title
+- targetAudience.item4.description
+- targetAudience.item5.title
+- targetAudience.item5.description
+
+ADVANTAGES SECTION:
+- advantages.title
+- advantages.intro
+- advantages.shortTerm.title
+- advantages.shortTerm.description
+- advantages.focused.title
+- advantages.focused.description
+- advantages.rootCause.title
+- advantages.rootCause.description
+- advantages.practical.title
+- advantages.practical.description
+- advantages.longTerm.title
+- advantages.longTerm.description
+- advantages.active.title
+- advantages.active.description
+- advantages.structured.title
+- advantages.structured.description
+- advantages.measurable.title
+- advantages.measurable.description
+
+TESTIMONIALS SECTION:
+- testimonials.title
+- testimonials.testimonial1
+- testimonials.testimonial2
+- testimonials.testimonial3
+- testimonials.testimonial4
+- testimonials.testimonial5
+
+FOOTER SECTION:
+- footer.menu.title
+- footer.menu.home
+- footer.menu.about
+- footer.menu.services
+- footer.menu.method
+- footer.menu.testimonials
+- footer.menu.contact
+- footer.form.title
+- footer.form.name
+- footer.form.phone
+- footer.form.message
+- footer.form.submit
+- footer.form.success
+- footer.contact.title
+- footer.contact.address
+- footer.contact.hours
+- footer.contact.mapTitle
+- footer.copyright
+
+TRANSLATION WORKFLOW:
+---------------------
+1. Start with en.json (English) - Primary content
+2. Use Ofer's site for Hebrew translations
+3. Translate to other languages:
+   - Use professional translation service OR
+   - Use Google Translate as placeholder
+   - Mark for professional review
+
+ENGLISH TEMPLATE (en.json):
+---------------------------
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "method": "Method",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "cta": "Free Consultation",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Want to be your best version?",
+    "staticText": "It's time to",
+    "word1": "Relax",
+    "word2": "Breathe",
+    "word3": "Smile",
+    "subtitle": "Together we'll embark on a journey to find peace",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More",
+    "imageAlt": "Therapist Image"
+  },
+  ...
+}
+
+RTL SUPPORT FOR HEBREW:
+-----------------------
+- Text direction handled by CSS
+- [class.rtl] binding in components
+- TranslateService detects Hebrew
+- Apply dir="rtl" to body or main container
+
+TESTING TRANSLATIONS:
+---------------------
+For each language:
+1. Switch language in header
+2. Navigate through all sections
+3. Verify all text displays correctly
+4. Check for missing translations
+5. Verify special characters
+6. Check text overflow
+7. Verify RTL for Hebrew
+8. Test form placeholders
+9. Test button text
+10. Test error messages
+
+MISSING TRANSLATION HANDLING:
+-----------------------------
+TranslateService shows key if missing.
+Example: "hero.title" instead of actual text
+
+Ensure all keys exist in all JSON files.
+
+PROFESSIONAL TRANSLATION NOTES:
+-------------------------------
+- Keep CBT terminology consistent
+- Maintain professional tone
+- Cultural adaptation where needed
+- Hebrew: Use formal/informal appropriately
+- Consider therapy-specific terms
+
+COMPLETION CRITERIA:
+--------------------
+[ ] All keys added to en.json
+[ ] All keys added to heb.json
+[ ] All keys added to fr.json
+[ ] All keys added to es.json
+[ ] All keys added to it.json
+[ ] All keys added to ru.json
+[ ] All keys added to dan.json
+[ ] Language switcher works
+[ ] RTL works for Hebrew
+[ ] No missing translations
+[ ] All sections translated
+[ ] Forms translated
+[ ] Error messages translated
+[ ] All tested in each language
+
+DEPENDENCIES:
+-------------
+- TranslateModule configured
+- Translation JSON files exist
+- Language switcher in header (Task 03)
+- All component templates use | translate pipe
+
+ESTIMATED TIME: 4 hours
+
+NEXT TASK: 15-responsive-design.txt
+
+================================================================================
+

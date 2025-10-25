@@ -1,0 +1,24 @@
+<section id="stages" class="stages-section">
+  <div class="container">
+    <div class="stages-header">
+      <h2 class="section-title">
+        {{ 'stages.title' | translate }}
+      </h2>
+      
+      <p class="stages-intro">
+        {{ 'stages.intro' | translate }}
+      </p>
+    </div>
+    
+    <div class="stages-grid">
+      <ng-container *ngFor="let stage of stages; let i = index">
+        <div class="stage-number">
+          <h3>{{ stage.number }}</h3>
+        </div>
+        <div class="stage-description">
+          <p>{{ stage.description | translate }}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

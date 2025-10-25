@@ -1,0 +1,207 @@
+================================================================================
+TASK 13: INTEGRATE THEME SYSTEM
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Ensure all components use the theme service and CSS variables for consistent
+theming across the entire application.
+
+DELIVERABLES:
+-------------
+✓ All components use CSS variables
+✓ Theme service integrated in components
+✓ Theme switcher functional
+✓ All 14 themes work correctly (including Lotus)
+✓ Theme persistence (localStorage)
+✓ Smooth theme transitions
+
+THEME SYSTEM OVERVIEW:
+----------------------
+Already created in theme.service.ts:
+- 14 themes available
+- Lotus theme recently added
+- CSS custom properties system
+- localStorage persistence
+
+CSS VARIABLES TO USE:
+---------------------
+--primary-color
+--primary-light
+--primary-dark
+--secondary-color
+--accent-color
+--text-dark
+--text-light
+--bg-light
+--bg-white
+--shadow-light
+--shadow-medium
+--gradient-primary
+--gradient-light
+
+COMPONENTS TO UPDATE:
+---------------------
+
+1. HEADER COMPONENT
+   - Background: rgba(255, 255, 255, 0.95)
+   - Shadow: var(--shadow-light)
+   - Links color: var(--text-dark)
+   - Links hover: var(--primary-color)
+   - CTA button: var(--gradient-primary)
+
+2. HERO COMPONENT
+   - Background: #fbe9e0
+   - Title color: var(--text-dark)
+   - Text color: var(--text-light)
+   - Buttons: var(--primary-color), var(--gradient-primary)
+
+3. ABOUT SECTION
+   - Background: var(--bg-light)
+   - Title color: var(--text-dark)
+   - Divider: var(--gradient-primary)
+   - Text: var(--text-light)
+   - Icons: var(--primary-color)
+
+4. METHOD SECTION
+   - Background: var(--bg-white)
+   - Icon circles: #fbe9e0
+   - Icon color: var(--primary-color)
+   - Shadow: var(--shadow-light)
+
+5. CTA FORM SECTION
+   - Background: var(--gradient-primary)
+   - Form controls: white with alpha
+   - Button: var(--primary-dark)
+
+6. STAGES SECTION
+   - Background: var(--bg-light)
+   - Number color: var(--primary-color)
+   - Boxes: var(--primary-light)
+   - Shadow: var(--shadow-light)
+
+7. TARGET AUDIENCE SECTION
+   - Background: var(--bg-white)
+   - Hover background: var(--primary-light)
+   - Icons: var(--primary-color)
+   - Illustration: #fbe9e0
+
+8. ADVANTAGES SECTION
+   - Background: var(--gradient-primary)
+   - Card back: var(--primary-dark)
+   - Text on dark: white
+
+9. TESTIMONIALS SECTION
+   - Background: var(--gradient-primary)
+   - Wrapper: rgba with blur
+   - Text: white
+   - Author: var(--primary-light)
+
+10. FOOTER
+    - Background: var(--text-dark)
+    - Divider: var(--primary-color)
+    - Links hover: var(--primary-color)
+    - Social hover: var(--primary-color)
+
+VERIFICATION CHECKLIST:
+-----------------------
+For each theme, verify:
+[ ] All sections use theme colors
+[ ] Gradients display correctly
+[ ] Text is readable (contrast)
+[ ] Buttons use theme colors
+[ ] Shadows use theme shadows
+[ ] Borders use theme colors
+[ ] Icons use theme colors
+[ ] Hover states use theme colors
+[ ] Forms use theme colors
+
+THEMES TO TEST:
+---------------
+1. Current (Pink)
+2. Ocean (Blues)
+3. Sage (Greens)
+4. Terracotta (Orange/Brown)
+5. Lavender (Purple/Mint)
+6. Navy (Navy/Gold)
+7. Coral (Coral/Peach)
+8. Forest (Deep Green)
+9. Sunset (Golden Orange)
+10. Twilight (Purple/Indigo)
+11. Mint (Aqua/Teal)
+12. Beige (Beige/Cream)
+13. Hebrew (Sky Blue/Sage)
+14. Lotus (Dusty Rose) ← NEW
+
+CSS TRANSITION:
+---------------
+Add smooth transitions for theme changes:
+
+* {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+THEME SERVICE INTEGRATION:
+--------------------------
+Ensure ThemeService is:
+- Imported in app.module.ts
+- Provided as singleton
+- Observable currentTheme$ subscribed in header
+- setTheme() method working
+- getAvailableThemes() returning all themes
+
+TESTING PROCEDURE:
+------------------
+1. Load application
+2. Open theme selector in header
+3. Click each theme
+4. Verify colors change throughout
+5. Check localStorage persists theme
+6. Reload page, verify theme loads
+7. Test all sections in each theme
+8. Verify readable contrast
+9. Test responsive behavior with themes
+10. Test RTL with themes
+
+COMMON ISSUES TO CHECK:
+-----------------------
+- Hardcoded colors instead of CSS variables
+- Missing fallback colors
+- Poor contrast in certain themes
+- Shadows not visible on dark backgrounds
+- Gradients not showing correctly
+- Icons not changing color
+- Buttons not themed
+- Forms not themed
+
+COMPLETION CRITERIA:
+--------------------
+[ ] All CSS variables implemented
+[ ] All components use variables
+[ ] No hardcoded colors remain
+[ ] All 14 themes tested
+[ ] Theme switcher works
+[ ] Theme persists on reload
+[ ] Smooth transitions work
+[ ] Contrast is acceptable
+[ ] All sections themed correctly
+[ ] RTL works with all themes
+
+DEPENDENCIES:
+-------------
+- All component tasks (03-12) should be complete
+- ThemeService already exists
+- CSS variables in styles.css
+
+ESTIMATED TIME: 3 hours
+
+NEXT TASK: 14-add-translations.txt
+
+================================================================================
+

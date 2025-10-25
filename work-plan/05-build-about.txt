@@ -1,0 +1,161 @@
+================================================================================
+TASK 05: BUILD ABOUT SECTION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create the "About" section with therapist information, photo, and background.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with decorative divider
+✓ 2-column layout (text + image)
+✓ Long-form text content
+✓ Therapist photo with styling
+✓ Background color from theme
+✓ Responsive layout
+✓ Scroll anchor point (#about)
+
+LAYOUT STRUCTURE:
+-----------------
+2-column layout (50/50 on desktop, stacked on mobile)
+- Left: Title, divider, text content
+- Right: Therapist photo
+
+HTML STRUCTURE:
+---------------
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2 class="section-title">
+          {{ 'about.title' | translate }}
+        </h2>
+        <div class="section-divider"></div>
+        
+        <div class="about-text">
+          <p>{{ 'about.paragraph1' | translate }}</p>
+          <p>{{ 'about.paragraph2' | translate }}</p>
+          <p>{{ 'about.paragraph3' | translate }}</p>
+        </div>
+        
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ 'about.highlight1' | translate }}</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ 'about.highlight2' | translate }}</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ 'about.highlight3' | translate }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <div class="image-wrapper">
+          <div class="therapist-placeholder">
+            <i class="fas fa-user-circle fa-8x"></i>
+            <p>{{ 'about.imageAlt' | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+CSS REQUIREMENTS:
+-----------------
+- Container with max-width
+- 2-column grid layout
+- Section padding (top and bottom)
+- Background from theme (bgLight)
+- Section title styling
+- Decorative divider (gradient line)
+- Text formatting
+- Image styling with border-radius
+- Box shadow on image
+- Responsive breakpoints
+
+SECTION TITLE PATTERN:
+----------------------
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  margin: 1rem 0 2rem 0;
+}
+
+HIGHLIGHT ITEMS:
+----------------
+- Icon from Font Awesome
+- Text next to icon
+- Primary color for icons
+- Flexbox layout
+- Spacing between items
+
+TRANSLATION KEYS NEEDED:
+------------------------
+about.title
+about.paragraph1
+about.paragraph2
+about.paragraph3
+about.highlight1
+about.highlight2
+about.highlight3
+about.imageAlt
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 2-column side by side
+Tablet (768-1024px): 2-column adjusted
+Mobile (<768px): Stacked, image on top
+
+IMAGE PLACEHOLDER:
+------------------
+- Large circular icon
+- Background color from theme
+- Box shadow
+- Border radius
+- Centered content
+- Can be replaced with actual image later
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] 2-column layout works
+[ ] Title and divider styled
+[ ] Text content displays
+[ ] Highlights show correctly
+[ ] Image placeholder styled
+[ ] Background color applied
+[ ] Responsive on all screens
+[ ] Scroll anchor works
+[ ] RTL support
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 1.5 hours
+
+NEXT TASK: 06-build-method.txt
+
+================================================================================
+

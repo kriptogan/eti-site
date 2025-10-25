@@ -1,0 +1,110 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a href="#home" (click)="scrollToSection('home', $event)">
+        <i class="fas fa-lotus"></i>
+        <span>{{ 'header.brand' | translate }}</span>
+      </a>
+    </div>
+    
+    <!-- Desktop Navigation Menu -->
+    <ul class="navbar-menu" [class.mobile-open]="isMenuOpen">
+      <li>
+        <a href="#home" (click)="scrollToSection('home', $event)">
+          {{ 'header.home' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#about" (click)="scrollToSection('about', $event)">
+          {{ 'header.about' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#method" (click)="scrollToSection('method', $event)">
+          {{ 'header.method' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#stages" (click)="scrollToSection('stages', $event)">
+          {{ 'header.stages' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#testimonials" (click)="scrollToSection('testimonials', $event)">
+          {{ 'header.testimonials' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#contact" (click)="scrollToSection('contact', $event)">
+          {{ 'header.contact' | translate }}
+        </a>
+      </li>
+      
+      <!-- Mobile Only: Language & Theme Selectors -->
+      <li class="mobile-only">
+        <div class="mobile-dropdowns">
+          <div class="mobile-languages">
+            <button 
+              *ngFor="let lang of languages" 
+              (click)="switchLanguage(lang.code)"
+              [class.active]="currentLang === lang.code"
+              class="mobile-lang-btn">
+              {{ lang.flag }}
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    
+    <!-- Desktop Actions -->
+    <div class="navbar-actions">
+      <!-- Language Switcher -->
+      <div class="dropdown language-dropdown" [class.open]="isLanguageDropdownOpen">
+        <button class="dropdown-toggle" (click)="toggleLanguageDropdown(); $event.stopPropagation()">
+          {{ getCurrentLanguageName() }}
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu" *ngIf="isLanguageDropdownOpen">
+          <li *ngFor="let lang of languages">
+            <button 
+              (click)="switchLanguage(lang.code)" 
+              [class.active]="currentLang === lang.code">
+              {{ lang.name }}
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Theme Selector -->
+      <div class="dropdown theme-dropdown" [class.open]="isThemeDropdownOpen">
+        <button class="dropdown-toggle" (click)="toggleThemeDropdown(); $event.stopPropagation()">
+          <i class="fas fa-palette"></i>
+        </button>
+        <ul class="dropdown-menu theme-menu" *ngIf="isThemeDropdownOpen">
+          <li *ngFor="let theme of availableThemes">
+            <button 
+              (click)="switchTheme(theme.name)" 
+              [class.active]="currentTheme === theme.name">
+              <span class="theme-preview" [style.background-color]="theme.colors.primary"></span>
+              {{ theme.displayName }}
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- CTA Button -->
+      <a href="tel:+972-XX-XXX-XXXX" class="btn-cta">
+        <i class="fas fa-phone"></i>
+        <span class="cta-text">{{ 'header.cta' | translate }}</span>
+      </a>
+    </div>
+    
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggle" (click)="toggleMenu()" [class.open]="isMenuOpen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</nav>

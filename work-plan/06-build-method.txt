@@ -1,0 +1,197 @@
+================================================================================
+TASK 06: BUILD METHOD SECTION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create the "Method" section explaining the therapy approach with 5 icon cards
+representing key aspects of the treatment.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with divider
+✓ Introduction text
+✓ 5 circular icon cards in a row
+✓ Icon labels
+✓ Responsive grid layout
+✓ Background color
+✓ Icon animations on scroll/hover
+
+LAYOUT STRUCTURE:
+-----------------
+- Centered title and divider
+- Introduction paragraph
+- 5-column grid for icon cards
+- Each card: circular background + icon + label
+
+HTML STRUCTURE:
+---------------
+<section id="method" class="method-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'method.title' | translate }}
+    </h2>
+    <div class="section-divider"></div>
+    
+    <p class="method-intro">
+      {{ 'method.intro' | translate }}
+    </p>
+    
+    <p class="method-description">
+      {{ 'method.description' | translate }}
+    </p>
+    
+    <p class="method-adapted">
+      <strong>{{ 'method.adapted' | translate }}</strong>
+    </p>
+    
+    <div class="method-icons">
+      <div class="icon-card" *ngFor="let aspect of methodAspects">
+        <div class="icon-circle">
+          <i [class]="aspect.icon"></i>
+        </div>
+        <p class="icon-label">{{ aspect.label | translate }}</p>
+      </div>
+    </div>
+    
+    <p class="method-result">
+      {{ 'method.result' | translate }}
+    </p>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class MethodSectionComponent {
+  methodAspects = [
+    {
+      icon: 'fas fa-user-circle fa-3x',
+      label: 'method.aspect1'
+    },
+    {
+      icon: 'fas fa-birthday-cake fa-3x',
+      label: 'method.aspect2'
+    },
+    {
+      icon: 'fas fa-heartbeat fa-3x',
+      label: 'method.aspect3'
+    },
+    {
+      icon: 'fas fa-life-ring fa-3x',
+      label: 'method.aspect4'
+    },
+    {
+      icon: 'fas fa-chart-line fa-3x',
+      label: 'method.aspect5'
+    }
+  ];
+}
+
+CSS REQUIREMENTS:
+-----------------
+.method-section {
+  padding: 5rem 0;
+  background: var(--bg-white);
+  text-align: center;
+}
+
+.method-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fbe9e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.icon-circle:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.icon-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+ICON ASPECTS (Based on Ofer's site):
+-------------------------------------
+1. The Patient (המטופל) - fas fa-user-circle
+2. Age (הגיל) - fas fa-birthday-cake
+3. Health (הבריאות) - fas fa-heartbeat
+4. Lifestyle (מאפני חיין) - fas fa-life-ring
+5. Motivation for Change (המוטיבציה לשינוי) - fas fa-chart-line
+
+TRANSLATION KEYS NEEDED:
+------------------------
+method.title
+method.intro
+method.description
+method.adapted
+method.result
+method.aspect1 (The Patient)
+method.aspect2 (Age)
+method.aspect3 (Health)
+method.aspect4 (Lifestyle)
+method.aspect5 (Motivation)
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 5 columns
+Tablet (768-1024px): 3 columns (2 rows)
+Mobile (<768px): 2 columns or stacked
+
+ANIMATIONS:
+-----------
+- Fade in on scroll
+- Icon hover: lift effect + shadow
+- Subtle scale on hover
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] Title and divider displayed
+[ ] Introduction text shows
+[ ] 5 icon cards render
+[ ] Icons from Font Awesome
+[ ] Circular backgrounds styled
+[ ] Labels display correctly
+[ ] Hover effects work
+[ ] Responsive grid layout
+[ ] Theme colors applied
+[ ] RTL support
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Font Awesome icons available
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 1.5 hours
+
+NEXT TASK: 07-build-cta-form.txt
+
+================================================================================
+

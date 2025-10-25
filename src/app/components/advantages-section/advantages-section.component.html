@@ -1,0 +1,26 @@
+<section class="advantages-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'advantages.title' | translate }}
+    </h2>
+    
+    <p class="advantages-intro">
+      {{ 'advantages.intro' | translate }}
+    </p>
+    
+    <div class="advantages-grid">
+      <div class="flip-card" 
+           *ngFor="let advantage of advantages; let i = index"
+           (click)="toggleCard(i)">
+        <div class="flip-card-inner" [class.flipped]="flippedStates[i]">
+          <div class="flip-card-front">
+            <h3>{{ advantage.title | translate }}</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>{{ advantage.description | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

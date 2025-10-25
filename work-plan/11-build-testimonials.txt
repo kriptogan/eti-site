@@ -1,0 +1,348 @@
+================================================================================
+TASK 11: BUILD TESTIMONIALS SECTION (CAROUSEL)
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create a testimonials section with a carousel/slider showing client reviews
+with navigation controls.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with divider
+✓ Testimonial cards in carousel
+✓ Navigation arrows (prev/next)
+✓ Pagination dots
+✓ Auto-play with pause on hover
+✓ Smooth transitions
+✓ Dark background
+✓ Responsive layout
+
+LAYOUT STRUCTURE:
+-----------------
+- Centered title with divider
+- Carousel container with testimonials
+- Navigation arrows on sides
+- Pagination dots at bottom
+
+HTML STRUCTURE:
+---------------
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'testimonials.title' | translate }}
+    </h2>
+    <div class="section-divider"></div>
+    
+    <div class="testimonials-carousel">
+      <button 
+        class="carousel-arrow carousel-arrow-prev" 
+        (click)="previousSlide()"
+        aria-label="Previous testimonial"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="testimonials-wrapper">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials; let i = index"
+             [class.active]="i === currentSlide">
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              {{ testimonial.text | translate }}
+            </p>
+            <div class="testimonial-author" *ngIf="testimonial.author">
+              <span>— {{ testimonial.author }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button 
+        class="carousel-arrow carousel-arrow-next" 
+        (click)="nextSlide()"
+        aria-label="Next testimonial"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      
+      <div class="carousel-pagination">
+        <button 
+          *ngFor="let testimonial of testimonials; let i = index"
+          class="pagination-dot"
+          [class.active]="i === currentSlide"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'Go to testimonial ' + (i + 1)"
+        ></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class TestimonialsComponent implements OnInit, OnDestroy {
+  testimonials = [
+    { text: 'testimonials.testimonial1', author: '' },
+    { text: 'testimonials.testimonial2', author: '' },
+    { text: 'testimonials.testimonial3', author: '' },
+    { text: 'testimonials.testimonial4', author: '' },
+    { text: 'testimonials.testimonial5', author: '' }
+  ];
+  
+  currentSlide: number = 0;
+  private autoPlayInterval: any;
+  private autoPlayDelay: number = 5000;
+  
+  ngOnInit() {
+    this.startAutoPlay();
+  }
+  
+  ngOnDestroy() {
+    this.stopAutoPlay();
+  }
+  
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.testimonials.length;
+    this.resetAutoPlay();
+  }
+  
+  previousSlide() {
+    this.currentSlide = 
+      this.currentSlide === 0 
+        ? this.testimonials.length - 1 
+        : this.currentSlide - 1;
+    this.resetAutoPlay();
+  }
+  
+  goToSlide(index: number) {
+    this.currentSlide = index;
+    this.resetAutoPlay();
+  }
+  
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, this.autoPlayDelay);
+  }
+  
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+    }
+  }
+  
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+CSS REQUIREMENTS:
+-----------------
+.testimonials-section {
+  padding: 5rem 0;
+  background: var(--gradient-primary);
+  color: white;
+  position: relative;
+}
+
+.section-title,
+.section-divider {
+  color: white;
+}
+
+.testimonials-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0 3rem;
+}
+
+.testimonials-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  min-height: 300px;
+  box-shadow: var(--shadow-medium);
+  backdrop-filter: blur(10px);
+}
+
+.testimonial-card {
+  display: none;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.testimonial-card.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-content {
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow-prev {
+  left: 0;
+}
+
+.carousel-arrow-next {
+  right: 0;
+}
+
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background: white;
+}
+
+.pagination-dot:hover {
+  transform: scale(1.2);
+}
+
+TESTIMONIALS CONTENT (Based on Ofer):
+--------------------------------------
+5 testimonials from clients describing their experiences:
+
+1. Skeptical at first, now feels real change, believes in self, moving forward
+
+2. OCD sufferer for 10 years, first time a treatment really helped significantly
+
+3. Had cognitive distortions, nightmares, low self-esteem, now feels confident
+
+4. Therapist identified problems and helped overcome them greatly
+
+5. Treated social anxiety, got important tools to deal with anxiety and depression
+
+TRANSLATION KEYS NEEDED:
+------------------------
+testimonials.title (Clients Say / מטופלים מספרים)
+testimonials.testimonial1
+testimonials.testimonial2
+testimonials.testimonial3
+testimonials.testimonial4
+testimonials.testimonial5
+
+CAROUSEL FEATURES:
+------------------
+- Auto-play: 5 seconds per slide
+- Pause on hover
+- Manual navigation with arrows
+- Pagination dots for direct access
+- Loop: after last slide, go to first
+- Smooth transitions
+- Touch swipe support (optional)
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): Full width carousel with side arrows
+Tablet (768-1024px): Adjusted padding
+Mobile (<768px): Smaller padding, smaller arrows
+
+ACCESSIBILITY:
+--------------
+- ARIA labels for navigation
+- Keyboard navigation (arrow keys)
+- Focus management
+- Screen reader announcements
+- Pause button for auto-play
+
+ALTERNATIVE IMPLEMENTATION:
+---------------------------
+Could use a library like:
+- Swiper.js
+- ngx-owl-carousel
+- Angular CDK for carousel
+
+But custom implementation is simpler for this use case.
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] Title and divider displayed
+[ ] Testimonials display
+[ ] Only one testimonial visible at a time
+[ ] Next/Previous arrows work
+[ ] Pagination dots work
+[ ] Auto-play works
+[ ] Pause on hover works
+[ ] Smooth transitions
+[ ] Fade in animation works
+[ ] Responsive layout
+[ ] Theme colors applied
+[ ] RTL support
+[ ] Accessibility implemented
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 2.5 hours
+
+NEXT TASK: 12-build-footer.txt
+
+================================================================================
+

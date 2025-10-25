@@ -1,0 +1,169 @@
+.cta-form-section {
+  background: var(--gradient-primary);
+  min-height: 500px;
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cta-image {
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.therapist-image-placeholder {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.therapist-image-placeholder i {
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+.therapist-image-placeholder p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-weight: 500;
+  margin: 0;
+}
+
+.cta-form-wrapper {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.cta-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.form-control.invalid {
+  border: 2px solid #ff6b6b;
+  background: rgba(255, 200, 200, 0.9);
+}
+
+.error-message {
+  color: #ffcccc;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .cta-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-image {
+    order: 2;
+    padding: 2rem 1rem;
+  }
+  
+  .cta-form-wrapper {
+    order: 1;
+    padding: 2rem 1rem;
+  }
+  
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .therapist-image-placeholder {
+    min-height: 300px;
+    padding: 2rem;
+  }
+  
+  .therapist-image-placeholder i {
+    font-size: 5rem !important;
+  }
+}
+

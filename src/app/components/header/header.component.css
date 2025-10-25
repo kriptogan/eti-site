@@ -1,0 +1,363 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #ff99a7;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-light);
+  background: #ff99a7;
+}
+
+.navbar-container {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo i {
+  font-size: 2rem;
+}
+
+.navbar-logo a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navbar-menu a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+/* Navbar Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+.dropdown-toggle i {
+  font-size: 0.8rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  list-style: none;
+  margin: 0;
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dropdown-menu button:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.dropdown-menu button.active {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Theme Preview */
+.theme-preview {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.theme-menu {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* CTA Button */
+.btn-cta {
+  background: white;
+  color: #ff99a7;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.btn-cta i {
+  font-size: 1rem;
+}
+
+/* Mobile Toggle */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-toggle.open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.navbar-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile Only Elements */
+.mobile-only {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+  
+  .navbar-menu {
+    gap: 1.5rem;
+  }
+  
+  .btn-cta .cta-text {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .navbar-menu.mobile-open {
+    right: 0;
+  }
+  
+  .navbar-menu li {
+    width: 100%;
+  }
+  
+  .navbar-menu a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-actions {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+    width: 100%;
+    border-top: 1px solid var(--bg-light);
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .mobile-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .mobile-lang-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--bg-light);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-lang-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  .navbar-logo span {
+    font-size: 1.2rem;
+  }
+}
+
+/* RTL Support */
+:host-context(.rtl) .navbar-menu {
+  right: auto;
+  left: -100%;
+}
+
+:host-context(.rtl) .navbar-menu.mobile-open {
+  left: 0;
+  right: auto;
+}
+
+:host-context(.rtl) .dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+:host-context(.rtl) .dropdown-menu button {
+  text-align: right;
+}
+

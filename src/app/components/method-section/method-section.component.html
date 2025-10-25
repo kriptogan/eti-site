@@ -1,0 +1,32 @@
+<section id="method" class="method-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'method.title' | translate }}
+    </h2>
+    
+    <p class="method-intro">
+      {{ 'method.intro' | translate }}
+    </p>
+    
+    <p class="method-description">
+      {{ 'method.description' | translate }}
+    </p>
+    
+    <p class="method-adapted">
+      <strong>{{ 'method.adapted' | translate }}</strong>
+    </p>
+    
+    <div class="method-icons">
+      <div class="icon-card" *ngFor="let aspect of methodAspects">
+        <div class="icon-circle">
+          <i [class]="aspect.icon"></i>
+        </div>
+        <p class="icon-label">{{ aspect.label | translate }}</p>
+      </div>
+    </div>
+    
+    <p class="method-result">
+      {{ 'method.result' | translate }}
+    </p>
+  </div>
+</section>

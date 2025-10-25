@@ -1,0 +1,63 @@
+<section class="cta-form-section">
+  <div class="cta-container">
+    <div class="cta-image">
+      <div class="image-wrapper">
+        <div class="therapist-image-placeholder">
+          <i class="fas fa-user-md fa-8x"></i>
+          <p>{{ 'cta.imageAlt' | translate }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-form-wrapper">
+      <h2 class="cta-title">
+        <strong>{{ 'cta.title' | translate }}</strong>
+        {{ 'cta.subtitle' | translate }}
+      </h2>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <input 
+              type="text" 
+              formControlName="name" 
+              [placeholder]="'cta.form.name' | translate"
+              class="form-control"
+            />
+          </div>
+          
+          <div class="form-group">
+            <input 
+              type="tel" 
+              formControlName="phone" 
+              [placeholder]="'cta.form.phone' | translate"
+              class="form-control"
+              required
+              [class.invalid]="isFieldInvalid('phone')"
+            />
+            <span class="error-message" *ngIf="isFieldInvalid('phone')">
+              {{ 'cta.form.phoneRequired' | translate }}
+            </span>
+          </div>
+          
+          <div class="form-group">
+            <input 
+              type="text" 
+              formControlName="message" 
+              [placeholder]="'cta.form.message' | translate"
+              class="form-control"
+            />
+          </div>
+        </div>
+        
+        <button 
+          type="submit" 
+          class="btn btn-primary btn-lg btn-block"
+          [disabled]="!contactForm.valid"
+        >
+          {{ 'cta.form.submit' | translate }} >>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

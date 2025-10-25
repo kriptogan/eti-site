@@ -1,0 +1,248 @@
+================================================================================
+TASK 09: BUILD TARGET AUDIENCE SECTION
+================================================================================
+
+STATUS: [ ] NOT STARTED
+
+OBJECTIVE:
+----------
+Create a section explaining who the therapy is suitable for, with bullet points
+and an illustration.
+
+FEATURES TO IMPLEMENT:
+----------------------
+✓ Section title with divider
+✓ 2-column layout (content + image)
+✓ Bullet point list with icons
+✓ Illustration on the right
+✓ Background color
+✓ Responsive layout
+
+LAYOUT STRUCTURE:
+-----------------
+2-column layout (60/40 on desktop)
+- Left: Title, divider, bullet points
+- Right: Illustration
+
+HTML STRUCTURE:
+---------------
+<section id="target-audience" class="target-audience-section">
+  <div class="container">
+    <h2 class="section-title">
+      {{ 'targetAudience.title' | translate }}
+    </h2>
+    <div class="section-divider"></div>
+    
+    <div class="audience-grid">
+      <div class="audience-content">
+        <div class="audience-item" *ngFor="let item of audienceItems">
+          <div class="item-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <div class="item-text">
+            <strong>{{ item.title | translate }}</strong>
+            <p>{{ item.description | translate }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="audience-image">
+        <div class="illustration-placeholder">
+          <i class="fas fa-users fa-8x"></i>
+          <p>{{ 'targetAudience.imageAlt' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+TYPESCRIPT LOGIC:
+-----------------
+export class TargetAudienceComponent {
+  audienceItems = [
+    {
+      icon: 'fas fa-user-friends',
+      title: 'targetAudience.item1.title',
+      description: 'targetAudience.item1.description'
+    },
+    {
+      icon: 'fas fa-exclamation-triangle',
+      title: 'targetAudience.item2.title',
+      description: 'targetAudience.item2.description'
+    },
+    {
+      icon: 'fas fa-sync-alt',
+      title: 'targetAudience.item3.title',
+      description: 'targetAudience.item3.description'
+    },
+    {
+      icon: 'fas fa-heart-broken',
+      title: 'targetAudience.item4.title',
+      description: 'targetAudience.item4.description'
+    },
+    {
+      icon: 'fas fa-running',
+      title: 'targetAudience.item5.title',
+      description: 'targetAudience.item5.description'
+    }
+  ];
+}
+
+CSS REQUIREMENTS:
+-----------------
+.target-audience-section {
+  padding: 5rem 0;
+  background: var(--bg-white);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.audience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.audience-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.audience-item:hover {
+  background: var(--primary-light);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-light);
+}
+
+.item-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-text strong {
+  display: block;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-text p {
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.audience-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration-placeholder {
+  background: #fbe9e0;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  color: var(--primary-color);
+}
+
+TARGET AUDIENCE ITEMS (Based on Ofer):
+---------------------------------------
+1. Teens and Adults with Anxiety
+   - Social anxiety, health anxiety, driving anxiety, generalized anxiety
+
+2. Panic and Phobias Sufferers
+   - Panic attacks and phobias affecting daily life
+
+3. OCD Sufferers
+   - Obsessive-compulsive disorder
+
+4. Low Self-Esteem
+   - Lack of confidence and self-worth, need direction
+
+5. Athletes
+   - Building mental resilience
+
+TRANSLATION KEYS NEEDED:
+------------------------
+targetAudience.title (Who Is This For? / למי מיועד הטיפול?)
+targetAudience.imageAlt
+targetAudience.item1.title
+targetAudience.item1.description
+targetAudience.item2.title
+targetAudience.item2.description
+targetAudience.item3.title
+targetAudience.item3.description
+targetAudience.item4.title
+targetAudience.item4.description
+targetAudience.item5.title
+targetAudience.item5.description
+
+RESPONSIVE BEHAVIOR:
+--------------------
+Desktop (>1024px): 2-column (60/40)
+Tablet (768-1024px): 2-column adjusted
+Mobile (<768px): Stacked, content on top
+
+ICONS:
+------
+- fas fa-user-friends (Teens/Adults)
+- fas fa-exclamation-triangle (Panic)
+- fas fa-sync-alt (OCD)
+- fas fa-heart-broken (Self-esteem)
+- fas fa-running (Athletes)
+
+ANIMATIONS:
+-----------
+- Fade in on scroll
+- Hover effect: slide right + background color change
+- Icon color change on hover
+
+COMPLETION CRITERIA:
+--------------------
+[ ] Section renders correctly
+[ ] Title and divider displayed
+[ ] 5 bullet items render
+[ ] Icons display correctly
+[ ] Text formatted properly
+[ ] Hover effects work
+[ ] Illustration placeholder styled
+[ ] Responsive layout works
+[ ] Theme colors applied
+[ ] RTL support
+
+DEPENDENCIES:
+-------------
+- Task 02 (Component creation) complete
+- Font Awesome icons available
+- Theme integration for colors
+- TranslateService configured
+
+ESTIMATED TIME: 1.5 hours
+
+NEXT TASK: 10-build-advantages.txt
+
+================================================================================
+
