@@ -1,34 +1,11 @@
 <section id="about" class="about-section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-content">
-        <h2 class="section-title">
-          {{ 'about.title' | translate }}
-        </h2>
-        
-        <div class="about-text">
-          <p>{{ 'about.paragraph1' | translate }}</p>
-          <p>{{ 'about.paragraph2' | translate }}</p>
-          <p>{{ 'about.paragraph3' | translate }}</p>
-        </div>
-        
-        <div class="about-highlights">
-          <div class="highlight-item" *ngFor="let highlight of highlights">
-            <i class="fas fa-check-circle"></i>
-            <span>{{ highlight | translate }}</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="about-image">
-        <div class="image-wrapper">
-          <img 
-            src="assets/profile-image.png" 
-            [alt]="'about.imageAlt' | translate"
-            class="therapist-photo"
-          />
-        </div>
-      </div>
+  <div class="cards-container">
+    <div class="card">
+      <h2 class="card-title">about-text</h2>
+    </div>
+    
+    <div class="card card-image">
+      <img src="assets/profile-image.png" alt="Profile" class="profile-image">
     </div>
   </div>
 </section>
