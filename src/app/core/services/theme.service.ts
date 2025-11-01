@@ -379,7 +379,7 @@ export class ThemeService {
         primaryLight: '#7DC8D1',   /* Light cyan */
         primaryDark: '#3A9BA8',    /* Darker cyan */
         secondary: '#66BFC9',      /* Secondary cyan shade */
-        accent: '#E6A99A',         /* 10% - Peachy salmon pink accent */
+        accent: '#b94242',         /* 10% - Peachy salmon pink accent */
         textDark: '#2C3E50',       /* Dark text */
         textLight: '#5A6C7D',      /* Soft grey text */
         bgLight: '#F5F1EC',        /* 60% - Light cream background */

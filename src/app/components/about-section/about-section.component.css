@@ -1,7 +1,7 @@
 /* About Section */
 .about-section {
   background: #f7f7eb;
-  padding: 75px 120px;
+  padding: 175px 120px;
 }
 
 .cards-container {
@@ -18,7 +18,7 @@
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  height: 590px;
+  height: 540px;
 }
 
 .card:first-child {
@@ -46,7 +46,7 @@
   align-items: center;
   justify-content: center;
   width: 600px;
-  height: 590px;
+  height: 540px;
 }
 
 .profile-image {
