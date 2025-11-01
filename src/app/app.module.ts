@@ -20,6 +20,7 @@ import { TargetAudienceComponent } from './components/target-audience/target-aud
 import { AdvantagesSectionComponent } from './components/advantages-section/advantages-section.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     TargetAudienceComponent,
     AdvantagesSectionComponent,
     TestimonialsComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollRevealDirective
   ],
   imports: [
     BrowserModule,

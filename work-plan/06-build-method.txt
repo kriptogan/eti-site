@@ -115,11 +115,11 @@ CSS REQUIREMENTS:
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #fbe9e0;
+  background: #f7f7eb;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-color);
+  color: var(--accent-color);
   transition: transform 0.3s ease;
   box-shadow: var(--shadow-light);
 }

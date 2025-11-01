@@ -1,6 +1,6 @@
 .method-section {
   padding: 5rem 0;
-  background: var(--bg-light);
+  background: #c99f9f7d;
   text-align: center;
 }
 
@@ -69,11 +69,11 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #fbe9e0;
+  background: #f7f7eb;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-color);
+  color: var(--accent-color);
   transition: all 0.3s ease;
   box-shadow: var(--shadow-light);
 }

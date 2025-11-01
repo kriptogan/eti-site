@@ -7,8 +7,8 @@
   --accent-color: #b94242;
   --text-dark: #2C3E50;
   --text-light: #5A6C7D;
-  --bg-light: #F0D2C9;
-  --bg-white: #FFFFFF;
+  --bg-light: #c99f9f7d;
+  --bg-white: #c99f9f7d;
   --shadow-light: 0 2px 10px rgba(70, 177, 177, 0.1);
   --shadow-medium: 0 4px 20px rgba(70, 177, 177, 0.15);
   --gradient-primary: linear-gradient(135deg, #46B1B1, #157375);
@@ -183,6 +183,10 @@ body {
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 2rem;
+}
+
+.extendand {
+  margin-bottom: 5rem;
 }
 
 .section-description {
@@ -401,11 +405,6 @@ body {
   }
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -437,6 +436,31 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Scroll Reveal Animations */
+.scroll-reveal {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent animation on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
   }
 }
 
