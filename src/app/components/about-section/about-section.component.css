@@ -8,21 +8,23 @@
   width: 1532px;
   max-width: 100%;
   display: flex;
-  gap: 15rem;
+  gap: 5rem;
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* Cards */
 .card {
   background: #f7f7eb;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   height: 540px;
 }
 
 .card:first-child {
-  flex: 3;
+  width: 800px;
+  flex-shrink: 0;
 }
 
 .card:last-child {
