@@ -1,6 +1,6 @@
 .testimonials-section {
   padding: 5rem 0;
-  background: var(--bg-light);
+  background: #f7f7eb;
   color: var(--text-dark);
   position: relative;
 }

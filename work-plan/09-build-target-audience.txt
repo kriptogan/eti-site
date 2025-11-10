@@ -114,7 +114,7 @@ CSS REQUIREMENTS:
   gap: 1rem;
   align-items: flex-start;
   padding: 1rem;
-  background: var(--bg-light);
+  background: #f7f7eb;
   border-radius: 10px;
   transition: all 0.3s ease;
 }

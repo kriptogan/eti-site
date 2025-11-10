@@ -1,6 +1,6 @@
 .advantages-section {
   padding: 5rem 0;
-  background: var(--bg-light);
+  background: url('/assets/advantages-background.png') center center / cover no-repeat;
   color: var(--text-dark);
   position: relative;
 }
@@ -110,7 +110,7 @@
 }
 
 .flip-card-back {
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   color: white;
   transform: rotateY(180deg);
 }

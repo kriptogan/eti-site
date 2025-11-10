@@ -126,7 +126,7 @@ body {
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   border: none;
   padding: 12px 30px;
   font-weight: 600;
@@ -198,7 +198,7 @@ body {
 
 /* Services Section */
 .services-section {
-  background: var(--bg-light);
+  background: #f7f7eb;
 }
 
 .service-card {
@@ -259,7 +259,7 @@ body {
   align-items: center;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: var(--bg-light);
+  background: #f7f7eb;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -305,7 +305,7 @@ body {
 
 /* Contact Section */
 .contact-section {
-  background: var(--bg-light);
+  background: #f7f7eb;
 }
 
 .contact-info {
@@ -411,11 +411,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  background: #f7f7eb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   border-radius: 4px;
 }
 

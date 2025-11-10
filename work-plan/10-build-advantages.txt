@@ -99,7 +99,7 @@ CSS REQUIREMENTS (FLIP CARD ANIMATION):
 ----------------------------------------
 .advantages-section {
   padding: 5rem 0;
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   color: white;
   position: relative;
 }

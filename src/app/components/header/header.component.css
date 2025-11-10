@@ -309,7 +309,7 @@
   .mobile-only {
     display: block;
     width: 100%;
-    border-top: 1px solid var(--bg-light);
+    border-top: 1px solid #f7f7eb;
     padding-top: 1rem;
     margin-top: 1rem;
   }
@@ -322,7 +322,7 @@
   
   .mobile-lang-btn {
     padding: 0.5rem 1rem;
-    border: 1px solid var(--bg-light);
+    border: 1px solid #f7f7eb;
     background: white;
     border-radius: 8px;
     cursor: pointer;

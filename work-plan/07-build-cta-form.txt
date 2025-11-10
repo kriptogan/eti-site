@@ -136,7 +136,7 @@ export class CtaFormComponent implements OnInit {
 CSS REQUIREMENTS:
 -----------------
 .cta-form-section {
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   padding: 0;
   min-height: 500px;
 }
@@ -148,7 +148,7 @@ CSS REQUIREMENTS:
 }
 
 .cta-image {
-  background: var(--bg-light);
+  background: #f7f7eb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +156,7 @@ CSS REQUIREMENTS:
 }
 
 .cta-form-wrapper {
-  background: var(--gradient-primary);
+  background: #c99f9f7d;
   padding: 3rem;
   display: flex;
   flex-direction: column;

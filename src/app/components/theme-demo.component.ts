@@ -97,7 +97,7 @@ import { ThemeService, ColorPalette } from '../core/services/theme.service';
     }
     
     .current-theme-info {
-      background: var(--bg-light);
+      background: #f7f7eb;
       padding: 1.5rem;
       border-radius: 12px;
       margin-top: 2rem;

@@ -50,18 +50,18 @@ COMPONENTS TO UPDATE:
    - Shadow: var(--shadow-light)
    - Links color: var(--text-dark)
    - Links hover: var(--primary-color)
-   - CTA button: var(--gradient-primary)
+   - CTA button: #c99f9f7d
 
 2. HERO COMPONENT
    - Background: #fbe9e0
    - Title color: var(--text-dark)
    - Text color: var(--text-light)
-   - Buttons: var(--primary-color), var(--gradient-primary)
+   - Buttons: var(--primary-color), #c99f9f7d
 
 3. ABOUT SECTION
-   - Background: var(--bg-light)
+   - Background: #f7f7eb
    - Title color: var(--text-dark)
-   - Divider: var(--gradient-primary)
+   - Divider: #c99f9f7d
    - Text: var(--text-light)
    - Icons: var(--primary-color)
 
@@ -72,12 +72,12 @@ COMPONENTS TO UPDATE:
    - Shadow: var(--shadow-light)
 
 5. CTA FORM SECTION
-   - Background: var(--gradient-primary)
+   - Background: #c99f9f7d
    - Form controls: white with alpha
    - Button: var(--primary-dark)
 
 6. STAGES SECTION
-   - Background: var(--bg-light)
+   - Background: #f7f7eb
    - Number color: var(--primary-color)
    - Boxes: var(--primary-light)
    - Shadow: var(--shadow-light)
@@ -89,12 +89,12 @@ COMPONENTS TO UPDATE:
    - Illustration: #fbe9e0
 
 8. ADVANTAGES SECTION
-   - Background: var(--gradient-primary)
+   - Background: #c99f9f7d
    - Card back: var(--primary-dark)
    - Text on dark: white
 
 9. TESTIMONIALS SECTION
-   - Background: var(--gradient-primary)
+   - Background: #c99f9f7d
    - Wrapper: rgba with blur
    - Text: white
    - Author: var(--primary-light)
