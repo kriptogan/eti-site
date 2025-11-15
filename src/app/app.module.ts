@@ -13,6 +13,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
+import { IncourageImageSectionComponent } from './components/incourage-image-section/incourage-image-section.component';
 import { MethodSectionComponent } from './components/method-section/method-section.component';
 import { CtaFormComponent } from './components/cta-form/cta-form.component';
 import { StagesSectionComponent } from './components/stages-section/stages-section.component';
@@ -28,6 +29,7 @@ import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
     HeaderComponent,
     HeroComponent,
     AboutSectionComponent,
+    IncourageImageSectionComponent,
     MethodSectionComponent,
     CtaFormComponent,
     StagesSectionComponent,

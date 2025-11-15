@@ -1,0 +1,14 @@
+.incourage-image-section {
+  min-height: 800px;
+  background: url('/assets/if-not-now-when.jpeg') center center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .incourage-image-section {
+    min-height: 400px;
+    background-attachment: scroll;
+  }
+}
+
