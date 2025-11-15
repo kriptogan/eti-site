@@ -59,7 +59,7 @@ COMPONENTS TO UPDATE:
    - Buttons: var(--primary-color), #c99f9f7d
 
 3. ABOUT SECTION
-   - Background: #f7f7eb
+   - Background: #f9f9f9
    - Title color: var(--text-dark)
    - Divider: #c99f9f7d
    - Text: var(--text-light)
@@ -77,7 +77,7 @@ COMPONENTS TO UPDATE:
    - Button: var(--primary-dark)
 
 6. STAGES SECTION
-   - Background: #f7f7eb
+   - Background: #f9f9f9
    - Number color: var(--primary-color)
    - Boxes: var(--primary-light)
    - Shadow: var(--shadow-light)

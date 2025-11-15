@@ -198,7 +198,7 @@ body {
 
 /* Services Section */
 .services-section {
-  background: #f7f7eb;
+  background: #f9f9f9;
 }
 
 .service-card {
@@ -259,7 +259,7 @@ body {
   align-items: center;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: #f7f7eb;
+  background: #f9f9f9;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -305,7 +305,7 @@ body {
 
 /* Contact Section */
 .contact-section {
-  background: #f7f7eb;
+  background: #f9f9f9;
 }
 
 .contact-info {
@@ -411,7 +411,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7f7eb;
+  background: #f9f9f9;
 }
 
 ::-webkit-scrollbar-thumb {

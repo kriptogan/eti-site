@@ -148,7 +148,7 @@ CSS REQUIREMENTS:
 }
 
 .cta-image {
-  background: #f7f7eb;
+  background: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;

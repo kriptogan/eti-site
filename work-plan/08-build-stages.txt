@@ -77,7 +77,7 @@ CSS REQUIREMENTS:
 -----------------
 .stages-section {
   padding: 5rem 0;
-  background: #f7f7eb;
+  background: #f9f9f9;
   text-align: center;
 }
 
