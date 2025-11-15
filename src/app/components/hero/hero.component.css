@@ -13,17 +13,24 @@
 
 
 .hero-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   padding: 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   z-index: 1;
   min-height: calc(100vh - 95px);
-  right: 30px;
-  width: 450px;
+  width: 100%;
   top: -50px;
+}
+
+.hero-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  /* max-width: 1200px; */
 }
 
 /* Contact Form Wrapper */
@@ -31,6 +38,31 @@
   width: 100%;
   max-width: 550px;
   animation: fadeInUp 0.8s ease-out;
+  flex-shrink: 0;
+}
+
+/* Hero Text Section */
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form {
@@ -39,6 +71,7 @@
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
 }
 
 /* Form Groups */
@@ -123,6 +156,24 @@ textarea.form-control {
     min-height: auto;
   }
   
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .hero-text {
+    text-align: center;
+    order: -1;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
   .contact-form-wrapper {
     max-width: 100%;
   }
@@ -156,5 +207,10 @@ textarea.form-control {
 :host-context(.rtl) .form-control {
   text-align: right;
   direction: rtl;
+}
+
+/* RTL: Reverse flex direction so form appears on left visually */
+:host-context(.rtl) .hero-content {
+  flex-direction: row-reverse;
 }
 
