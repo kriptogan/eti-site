@@ -17,6 +17,13 @@
   margin-bottom: 1rem;
 }
 
+.title-divider {
+  width: 85px;
+  height: 5px;
+  background: #a03939;
+  margin: 0 auto 2rem;
+}
+
 .section-divider {
   width: 60px;
   height: 4px;

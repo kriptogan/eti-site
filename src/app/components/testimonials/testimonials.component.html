@@ -3,11 +3,12 @@
     <h2 class="section-title">
       {{ 'testimonials.title' | translate }}
     </h2>
+    <div class="title-divider"></div>
     
     <div class="testimonials-carousel">
       <button 
         class="carousel-arrow carousel-arrow-prev" 
-        (click)="previousSlide()"
+        (click)="nextSlide()"
         aria-label="Previous testimonial">
         <i class="fas fa-chevron-left"></i>
       </button>
@@ -29,7 +30,7 @@
       
       <button 
         class="carousel-arrow carousel-arrow-next" 
-        (click)="nextSlide()"
+        (click)="previousSlide()"
         aria-label="Next testimonial">
         <i class="fas fa-chevron-right"></i>
       </button>

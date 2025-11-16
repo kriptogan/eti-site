@@ -16,7 +16,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   
   currentSlide: number = 0;
   private autoPlayInterval: any;
-  private autoPlayDelay: number = 5000;
+  private autoPlayDelay: number = 10000;
   
   constructor() {}
 

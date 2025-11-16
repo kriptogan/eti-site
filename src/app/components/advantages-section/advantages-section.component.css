@@ -13,7 +13,8 @@
 
 .section-title,
 .advantages-intro,
-.section-divider {
+.section-divider,
+.title-divider {
   text-align: center;
 }
 
@@ -22,6 +23,13 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-dark);
+}
+
+.title-divider {
+  width: 85px;
+  height: 5px;
+  background: #a03939;
+  margin: 0 auto 2rem;
 }
 
 .section-divider {

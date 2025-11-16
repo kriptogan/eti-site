@@ -55,9 +55,16 @@
 
 .cta-title {
   font-size: 1.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: black;
   line-height: 1.4;
+}
+
+.title-divider {
+  width: 85px;
+  height: 5px;
+  background: #a03939;
+  margin: 0 auto 2rem;
 }
 
 .contact-form {
