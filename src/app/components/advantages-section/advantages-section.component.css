@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.advantages-section .container {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -46,6 +50,149 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-light);
+}
+
+.advantages-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.advantage-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(100% - 0px);
+  margin-left: 0;
+  border-left: 4px solid #a03939;
+}
+
+:host-context(.rtl) .advantage-item {
+  border-left: none;
+  border-right: 4px solid #a03939;
+}
+
+/* Staircase effect - each item offset progressively */
+.advantage-item:nth-child(1) {
+  margin-left: 0;
+  margin-right: 0;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.advantage-item:nth-child(2) {
+  margin-left: 60px;
+  margin-right: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.advantage-item:nth-child(3) {
+  margin-left: 120px;
+  margin-right: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.advantage-item:nth-child(4) {
+  margin-left: 180px;
+  margin-right: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.advantage-item:nth-child(5) {
+  margin-left: 240px;
+  margin-right: 0;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* RTL support - reverse staircase direction */
+:host-context(.rtl) .advantage-item:nth-child(1) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+:host-context(.rtl) .advantage-item:nth-child(2) {
+  margin-left: 0;
+  margin-right: 60px;
+}
+
+:host-context(.rtl) .advantage-item:nth-child(3) {
+  margin-left: 0;
+  margin-right: 120px;
+}
+
+:host-context(.rtl) .advantage-item:nth-child(4) {
+  margin-left: 0;
+  margin-right: 180px;
+}
+
+:host-context(.rtl) .advantage-item:nth-child(5) {
+  margin-left: 0;
+  margin-right: 240px;
+}
+
+.advantage-item:hover {
+  transform: translateX(10px) translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+:host-context(.rtl) .advantage-item:hover {
+  transform: translateX(-10px) translateY(-3px);
+}
+
+/* Staircase connector lines (optional visual enhancement) */
+/* .advantage-item::before {
+  content: '';
+  position: absolute;
+  left: -64px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: #a03939;
+  opacity: 0.3;
+  transform: translateY(-50%);
+  display: none;
+} */
+
+.advantage-item:not(:first-child)::before {
+  display: block;
+}
+
+:host-context(.rtl) .advantage-item::before {
+  left: auto;
+  right: -64px;
+}
+
+.advantage-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c99f9f7d;
+  border-radius: 50%;
+  color: #a03939;
+  font-size: 1.5rem;
+}
+
+.advantage-text {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.advantage-text strong {
+  color: #a03939;
+  font-weight: 700;
 }
 
 .advantages-grid {
@@ -129,6 +276,18 @@
   line-height: 1.6;
 }
 
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1024px) {
   .advantages-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -169,6 +328,31 @@
   
   .flip-card-back p {
     font-size: 0.9rem;
+  }
+  
+  .advantages-list {
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+  }
+  
+  .advantage-item {
+    padding: 1.25rem 1.5rem;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .advantage-item::before {
+    display: none !important;
+  }
+  
+  .advantage-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .advantage-text {
+    font-size: 1.1rem;
   }
 }
 

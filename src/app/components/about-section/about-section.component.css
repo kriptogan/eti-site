@@ -1,6 +1,6 @@
 /* About Section */
 .about-section {
-  background: #f9f9f9;
+  background: #f7f7eb;
   padding: 175px 120px;
 }
 
@@ -15,7 +15,7 @@
 
 /* Cards */
 .card {
-  background: #bec5bea6;
+  background: #c1c1c196;
   /* border-radius: 20px; */
   padding: 2rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -25,11 +25,13 @@
 .card:first-child {
   width: 800px;
   flex-shrink: 0;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .card:last-child {
   width: 450px;
   flex-shrink: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .card-title {
@@ -89,6 +91,18 @@
   width: 450px;
   height: 590px;
   object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */

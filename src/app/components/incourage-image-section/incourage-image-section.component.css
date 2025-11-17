@@ -2,6 +2,19 @@
   min-height: 800px;
   background: url('/assets/if-not-now-when.jpeg') center center / cover no-repeat;
   background-attachment: fixed;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */

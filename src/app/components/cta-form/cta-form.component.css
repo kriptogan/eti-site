@@ -9,6 +9,7 @@
   min-height: 500px;
   max-width: 1400px;
   margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .cta-image {
@@ -16,7 +17,19 @@
   align-items: center;
   justify-content: center;
   padding: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
+
+.cta-form-wrapper {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+
 
 .therapist-image-placeholder {
   background: white;
@@ -45,13 +58,6 @@
   margin: 0;
 }
 
-.cta-form-wrapper {
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: black;
-}
 
 .cta-title {
   font-size: 1.8rem;
@@ -170,6 +176,18 @@
   
   .therapist-image-placeholder i {
     font-size: 5rem !important;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
