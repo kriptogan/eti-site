@@ -177,7 +177,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #c99f9f7d;
+  background: #60b8b96b;
   border-radius: 50%;
   color: #a03939;
   font-size: 1.5rem;
@@ -265,7 +265,7 @@
 }
 
 .flip-card-back {
-  background: #c99f9f7d;
+  background: #60b8b96b;
   color: white;
   transform: rotateY(180deg);
 }

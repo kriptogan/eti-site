@@ -50,18 +50,18 @@ COMPONENTS TO UPDATE:
    - Shadow: var(--shadow-light)
    - Links color: var(--text-dark)
    - Links hover: var(--primary-color)
-   - CTA button: #c99f9f7d
+   - CTA button: #60b8b96b
 
 2. HERO COMPONENT
    - Background: #fbe9e0
    - Title color: var(--text-dark)
    - Text color: var(--text-light)
-   - Buttons: var(--primary-color), #c99f9f7d
+   - Buttons: var(--primary-color), #60b8b96b
 
 3. ABOUT SECTION
    - Background: #f9f9f9
    - Title color: var(--text-dark)
-   - Divider: #c99f9f7d
+   - Divider: #60b8b96b
    - Text: var(--text-light)
    - Icons: var(--primary-color)
 
@@ -72,7 +72,7 @@ COMPONENTS TO UPDATE:
    - Shadow: var(--shadow-light)
 
 5. CTA FORM SECTION
-   - Background: #c99f9f7d
+   - Background: #60b8b96b
    - Form controls: white with alpha
    - Button: var(--primary-dark)
 
@@ -89,12 +89,12 @@ COMPONENTS TO UPDATE:
    - Illustration: #fbe9e0
 
 8. ADVANTAGES SECTION
-   - Background: #c99f9f7d
+   - Background: #60b8b96b
    - Card back: var(--primary-dark)
    - Text on dark: white
 
 9. TESTIMONIALS SECTION
-   - Background: #c99f9f7d
+   - Background: #60b8b96b
    - Wrapper: rgba with blur
    - Text: white
    - Author: var(--primary-light)
