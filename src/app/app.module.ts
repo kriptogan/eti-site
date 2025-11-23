@@ -22,6 +22,7 @@ import { AdvantagesSectionComponent } from './components/advantages-section/adva
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
+import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
     AdvantagesSectionComponent,
     TestimonialsComponent,
     FooterComponent,
-    ScrollRevealDirective
+    ScrollRevealDirective,
+    ScrollAnimateDirective
   ],
   imports: [
     BrowserModule,

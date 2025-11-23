@@ -446,6 +446,25 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
+/* Scroll Animate - Hero-style animations on scroll */
+.scroll-animate-hidden {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+.scroll-animate-visible {
+  animation: fadeInUp 0.8s ease-out both !important;
+}
+
+/* Ensure child elements with animations also respect scroll state */
+.scroll-animate-hidden * {
+  animation-play-state: paused !important;
+}
+
+.scroll-animate-visible * {
+  animation-play-state: running !important;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
