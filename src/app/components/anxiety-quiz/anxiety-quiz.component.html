@@ -1,0 +1,111 @@
+<div class="quiz-container">
+  <div class="quiz-wrapper" *ngIf="!showResults">
+    <!-- Header -->
+    <div class="quiz-header">
+      <button class="btn-back" (click)="goHome()">
+        <i class="fas fa-arrow-right"></i>
+        חזרה לדף הבית
+      </button>
+      <h1 class="quiz-title">שאלון בחינת חרדה</h1>
+      <p class="quiz-subtitle">ענה על השאלות הבאות בכנות כדי לקבל תוצאה מדויקת יותר</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" [style.width.%]="progress"></div>
+      <span class="progress-text">שאלה {{ currentQuestion + 1 }} מתוך {{ questions.length }}</span>
+    </div>
+
+    <!-- Question Card -->
+    <div class="question-card">
+      <h2 class="question-text">{{ questions[currentQuestion].text }}</h2>
+      
+      <div class="options-container">
+        <div 
+          class="option-card" 
+          *ngFor="let option of questions[currentQuestion].options"
+          [class.selected]="answers[currentQuestion] === option.value"
+          (click)="selectAnswer(option.value)">
+          <div class="option-radio">
+            <div class="radio-inner" *ngIf="answers[currentQuestion] === option.value"></div>
+          </div>
+          <span class="option-text">{{ option.text }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button 
+        class="btn-nav btn-prev" 
+        (click)="previousQuestion()"
+        [disabled]="currentQuestion === 0">
+        <i class="fas fa-chevron-right"></i>
+        הקודם
+      </button>
+      
+      <button 
+        class="btn-nav btn-next" 
+        (click)="nextQuestion()"
+        [disabled]="!isAnswered">
+        <span *ngIf="currentQuestion < questions.length - 1">
+          הבא
+          <i class="fas fa-chevron-left"></i>
+        </span>
+        <span *ngIf="currentQuestion === questions.length - 1">
+          סיים
+          <i class="fas fa-check"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div class="results-wrapper" *ngIf="showResults">
+    <div class="results-card">
+      <div class="results-icon">
+        <i class="fas fa-clipboard-check"></i>
+      </div>
+      
+      <h1 class="results-title">תוצאות השאלון</h1>
+      
+      <div class="score-display">
+        <div class="score-circle">
+          <span class="score-number">{{ totalScore }}</span>
+          <span class="score-total">/ {{ questions.length * 3 }}</span>
+        </div>
+      </div>
+      
+      <div class="result-message">
+        <h3>{{ getResultMessage() }}</h3>
+        <p>{{ getResultSuggestion() }}</p>
+      </div>
+      
+      <div class="result-disclaimer">
+        <i class="fas fa-info-circle"></i>
+        <p>
+          שים לב: תוצאות אלו הן אינדיקציה בלבד ואינן מהוות אבחנה רפואית. 
+          במקרה של מצוקה רגשית, מומלץ לפנות לאיש מקצוע מוסמך.
+        </p>
+      </div>
+      
+      <div class="result-actions">
+        <button class="btn-action btn-primary" (click)="goHome()">
+          <i class="fas fa-home"></i>
+          חזרה לדף הבית
+        </button>
+        <button class="btn-action btn-secondary" (click)="restartQuiz()">
+          <i class="fas fa-redo"></i>
+          בצע שאלון שוב
+        </button>
+      </div>
+      
+      <div class="cta-contact">
+        <p>מעוניין בליווי מקצועי?</p>
+        <button class="btn-contact" (click)="goHome()">
+          צור קשר
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

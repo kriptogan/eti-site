@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,11 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollRevealDirective } from './directives/scroll-reveal.directive';
 import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
+import { SelfCheckSectionComponent } from './components/self-check-section/self-check-section.component';
+import { DepressionQuizComponent } from './components/depression-quiz/depression-quiz.component';
+import { AnxietyQuizComponent } from './components/anxiety-quiz/anxiety-quiz.component';
+import { SelfEsteemQuizComponent } from './components/self-esteem-quiz/self-esteem-quiz.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +45,16 @@ import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
     TestimonialsComponent,
     FooterComponent,
     ScrollRevealDirective,
-    ScrollAnimateDirective
+    ScrollAnimateDirective,
+    SelfCheckSectionComponent,
+    DepressionQuizComponent,
+    AnxietyQuizComponent,
+    SelfEsteemQuizComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
