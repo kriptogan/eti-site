@@ -6,28 +6,28 @@
         <i class="fas fa-arrow-right"></i>
         חזרה לדף הבית
       </button>
-      <h1 class="quiz-title">שאלון בחינת דיכאון</h1>
-      <p class="quiz-subtitle">ענה על השאלות הבאות בכנות כדי לקבל תוצאה מדויקת יותר</p>
+      <h1 class="quiz-title">שאלון PHQ-9</h1>
+      <p class="quiz-subtitle">במהלך השבועיים האחרונים, באיזו תדירות הייתי מוטרד מכל אחת מהבעיות הבאות:</p>
     </div>
 
     <!-- Progress Bar -->
     <div class="progress-container">
       <div class="progress-bar" [style.width.%]="progress"></div>
-      <span class="progress-text">שאלה {{ currentQuestion + 1 }} מתוך {{ questions.length }}</span>
+      <span class="progress-text">{{ questionNumber }}</span>
     </div>
 
     <!-- Question Card -->
     <div class="question-card">
-      <h2 class="question-text">{{ questions[currentQuestion].text }}</h2>
+      <h2 class="question-text">{{ currentQuestionText }}</h2>
       
       <div class="options-container">
         <div 
           class="option-card" 
-          *ngFor="let option of questions[currentQuestion].options"
-          [class.selected]="answers[currentQuestion] === option.value"
+          *ngFor="let option of currentOptions"
+          [class.selected]="currentAnswer === option.value"
           (click)="selectAnswer(option.value)">
           <div class="option-radio">
-            <div class="radio-inner" *ngIf="answers[currentQuestion] === option.value"></div>
+            <div class="radio-inner" *ngIf="currentAnswer === option.value"></div>
           </div>
           <span class="option-text">{{ option.text }}</span>
         </div>
@@ -39,7 +39,7 @@
       <button 
         class="btn-nav btn-prev" 
         (click)="previousQuestion()"
-        [disabled]="currentQuestion === 0">
+        [disabled]="currentQuestion === 0 && !showFinalQuestion">
         <i class="fas fa-chevron-right"></i>
         הקודם
       </button>
@@ -48,11 +48,11 @@
         class="btn-nav btn-next" 
         (click)="nextQuestion()"
         [disabled]="!isAnswered">
-        <span *ngIf="currentQuestion < questions.length - 1">
+        <span *ngIf="!showFinalQuestion && currentQuestion < questions.length - 1">
           הבא
           <i class="fas fa-chevron-left"></i>
         </span>
-        <span *ngIf="currentQuestion === questions.length - 1">
+        <span *ngIf="showFinalQuestion || currentQuestion === questions.length - 1">
           סיים
           <i class="fas fa-check"></i>
         </span>
@@ -72,7 +72,7 @@
       <div class="score-display">
         <div class="score-circle">
           <span class="score-number">{{ totalScore }}</span>
-          <span class="score-total">/ {{ questions.length * 3 }}</span>
+          <span class="score-total">/ 27</span>
         </div>
       </div>
       
@@ -100,10 +100,11 @@
         </button>
       </div>
       
-      <div class="cta-contact">
-        <p>מעוניין בליווי מקצועי?</p>
+      <div class="cta-contact" *ngIf="totalScore < 19">
+        <p><strong>לא צריך להתמודד עם זה לבד.</strong></p>
+        <p>אני כאן כדי ללוות אותך בדרך לשינוי – בגישה מקצועית, רגישה ומותאמת אישית לצרכים שלך.</p>
         <button class="btn-contact" (click)="goHome()">
-          צור קשר
+          בואי נדבר – קבעי פגישת ייעוץ
         </button>
       </div>
     </div>

@@ -6,8 +6,8 @@
         <i class="fas fa-arrow-right"></i>
         חזרה לדף הבית
       </button>
-      <h1 class="quiz-title">שאלון בחינת חרדה</h1>
-      <p class="quiz-subtitle">ענה על השאלות הבאות בכנות כדי לקבל תוצאה מדויקת יותר</p>
+      <h1 class="quiz-title">שאלון GAD-7</h1>
+      <p class="quiz-subtitle">במהלך השבועיים האחרונים, באיזו תדירות הייתי מוטרד מכל אחת מהבעיות הבאות:</p>
     </div>
 
     <!-- Progress Bar -->
@@ -72,7 +72,7 @@
       <div class="score-display">
         <div class="score-circle">
           <span class="score-number">{{ totalScore }}</span>
-          <span class="score-total">/ {{ questions.length * 3 }}</span>
+          <span class="score-total">/ 21</span>
         </div>
       </div>
       
@@ -100,10 +100,11 @@
         </button>
       </div>
       
-      <div class="cta-contact">
-        <p>מעוניין בליווי מקצועי?</p>
+      <div class="cta-contact" *ngIf="totalScore < 15">
+        <p><strong>לא צריך להתמודד עם זה לבד.</strong></p>
+        <p>אני כאן כדי ללוות אותך בדרך לשינוי – בגישה מקצועית, רגישה ומותאמת אישית לצרכים שלך.</p>
         <button class="btn-contact" (click)="goHome()">
-          צור קשר
+          בואי נדבר – קבעי פגישת ייעוץ
         </button>
       </div>
     </div>

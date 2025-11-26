@@ -21,52 +21,72 @@ export class AnxietyQuizComponent implements OnInit {
   questions: Question[] = [
     {
       id: 1,
-      text: 'שאלה 1 - [נא למלא את התוכן]',
+      text: 'הרגשתי עצבני, חרד או מתוח מאוד',
       options: [
         { text: 'כלל לא', value: 0 },
-        { text: 'מעט', value: 1 },
-        { text: 'במידה בינונית', value: 2 },
-        { text: 'הרבה', value: 3 }
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
       ]
     },
     {
       id: 2,
-      text: 'שאלה 2 - [נא למלא את התוכן]',
+      text: 'לא הייתי מסוגל להפסיק לדאוג או לשלוט בדאגה',
       options: [
         { text: 'כלל לא', value: 0 },
-        { text: 'מעט', value: 1 },
-        { text: 'במידה בינונית', value: 2 },
-        { text: 'הרבה', value: 3 }
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
       ]
     },
     {
       id: 3,
-      text: 'שאלה 3 - [נא למלא את התוכן]',
+      text: 'הייתי מודאג יותר מדי בנוגע לדברים שונים',
       options: [
         { text: 'כלל לא', value: 0 },
-        { text: 'מעט', value: 1 },
-        { text: 'במידה בינונית', value: 2 },
-        { text: 'הרבה', value: 3 }
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
       ]
     },
     {
       id: 4,
-      text: 'שאלה 4 - [נא למלא את התוכן]',
+      text: 'התקשיתי להירגע',
       options: [
         { text: 'כלל לא', value: 0 },
-        { text: 'מעט', value: 1 },
-        { text: 'במידה בינונית', value: 2 },
-        { text: 'הרבה', value: 3 }
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
       ]
     },
     {
       id: 5,
-      text: 'שאלה 5 - [נא למלא את התוכן]',
+      text: 'הייתי כל כך חסר מנוחה שהיה לי קשה לשבת מבלי לנוע',
       options: [
         { text: 'כלל לא', value: 0 },
-        { text: 'מעט', value: 1 },
-        { text: 'במידה בינונית', value: 2 },
-        { text: 'הרבה', value: 3 }
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
+      ]
+    },
+    {
+      id: 6,
+      text: 'הייתי מתעצבן או מתרגז בקלות',
+      options: [
+        { text: 'כלל לא', value: 0 },
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
+      ]
+    },
+    {
+      id: 7,
+      text: 'פחדתי כאילו משהו נורא עלול לקרות',
+      options: [
+        { text: 'כלל לא', value: 0 },
+        { text: 'כמה ימים', value: 1 },
+        { text: 'יותר ממחצית הימים', value: 2 },
+        { text: 'כמעט כל יום', value: 3 }
       ]
     }
   ];
@@ -101,32 +121,27 @@ export class AnxietyQuizComponent implements OnInit {
   }
 
   getResultMessage(): string {
-    const maxScore = this.questions.length * 3;
-    const percentage = (this.totalScore / maxScore) * 100;
-    
-    if (percentage < 25) {
-      return 'התוצאות מצביעות על רמה נמוכה של תסמיני חרדה';
-    } else if (percentage < 50) {
-      return 'התוצאות מצביעות על רמה קלה של תסמיני חרדה';
-    } else if (percentage < 75) {
-      return 'התוצאות מצביעות על רמה בינונית של תסמיני חרדה';
+    // GAD-7 scoring: 0-4 minimal, 5-9 mild, 10-14 moderate, 15-21 severe
+    if (this.totalScore <= 4) {
+      return 'חרדה מינימלית או ללא תסמיני חרדה';
+    } else if (this.totalScore <= 9) {
+      return 'תסמיני חרדה קלים';
+    } else if (this.totalScore <= 14) {
+      return 'תסמיני חרדה בינוניים';
     } else {
-      return 'התוצאות מצביעות על רמה גבוהה של תסמיני חרדה';
+      return 'תסמיני חרדה חמורים';
     }
   }
 
   getResultSuggestion(): string {
-    const maxScore = this.questions.length * 3;
-    const percentage = (this.totalScore / maxScore) * 100;
-    
-    if (percentage < 25) {
-      return 'נראה שאתה מצוי במצב רגשי טוב. המשך לשמור על הרגלים בריאים ופנה לעזרה במידת הצורך.';
-    } else if (percentage < 50) {
-      return 'תוצאות אלו מצביעות על תסמינים קלים. מומלץ לפנות לשיחת ייעוץ עם איש מקצוע.';
-    } else if (percentage < 75) {
-      return 'תוצאות אלו מצביעות על תסמינים משמעותיים. מומלץ מאוד לפנות לטיפול מקצועי.';
+    if (this.totalScore <= 4) {
+      return 'לא זוהו תסמיני חרדה משמעותיים. המשיכי לשמור על הרגלי חיים בריאים ופני לעזרה מקצועית במידת הצורך.';
+    } else if (this.totalScore <= 9) {
+      return 'זוהו תסמיני חרדה קלים. מומלץ לשקול שיחת ייעוץ עם איש מקצוע.';
+    } else if (this.totalScore <= 14) {
+      return 'זוהו תסמיני חרדה בינוניים. מומלץ מאוד לפנות לטיפול מקצועי. טיפול יכול לעזור לך להתמודד עם התסמינים ולשפר את איכות חייך.';
     } else {
-      return 'תוצאות אלו מצביעות על תסמינים חמורים. חשוב מאוד לפנות לעזרה מקצועית בהקדם.';
+      return 'זוהו תסמיני חרדה חמורים. חשוב מאוד לפנות לעזרה מקצועית בהקדם. מומלץ לפנות לרופא המשפחה או לשירותי בריאות הנפש בהקדם האפשרי.';
     }
   }
 

@@ -362,10 +362,15 @@
 }
 
 .cta-contact p {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
   color: var(--text-dark);
   margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cta-contact p strong {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .btn-contact {
