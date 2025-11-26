@@ -125,11 +125,11 @@ export class AnxietyQuizComponent implements OnInit {
     if (this.totalScore <= 4) {
       return 'חרדה מינימלית או ללא תסמיני חרדה';
     } else if (this.totalScore <= 9) {
-      return 'תסמיני חרדה קלים';
+      return 'תסמיני חרדה קלה';
     } else if (this.totalScore <= 14) {
-      return 'תסמיני חרדה בינוניים';
+      return 'תסמיני חרדה משמעותית';
     } else {
-      return 'תסמיני חרדה חמורים';
+      return 'תסמיני חרדה קשה';
     }
   }
 
